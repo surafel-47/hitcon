@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <title>Hitcon Engineering - Excellence in Engineering Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#f97316',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+     <!-- TopNavbar -->
+    <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
+    <div class="container mx-auto p-4">
+    <!-- Project List Section -->
+    <div class="overflow-y-auto max-h-60 mb-6">
+        <ul id="project-list" class="space-y-4">
+            <!-- Project list items will be generated dynamically using Alpine.js -->
+            <template x-for="project in projects" :key="project.project_no">
+                <li>
+                    <button
+                        @click="selectProject(project)"
+                        class="text-xl font-semibold hover:text-blue-500"
+                    >
+                        <span x-text="project.project_name"></span>
+                    </button>
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details" x-show="selectedProject" class="bg-white shadow-md p-6 rounded-md">
+        <template x-if="selectedProject">
+            <div>
+                <h3 class="text-2xl font-bold" x-text="selectedProject.project_name"></h3>
+                <div class="mt-4 flex">
+                    <img :src="selectedProject.project_banner_image" alt="Project Banner" class="w-1/3 rounded-md shadow-md">
+                    <div class="ml-6">
+                        <p><strong>Client:</strong> <span x-text="selectedProject.client_name_and_address.client_name"></span></p>
+                        <p><strong>Location:</strong> <span x-text="selectedProject.project_location"></span></p>
+                        <p><strong>Complexity:</strong> <span x-text="selectedProject.project_complexity"></span></p>
+                        <p><strong>Period:</strong> <span x-text="selectedProject.project_period"></span></p>
+                        <p><strong>Reference No.:</strong> <span x-text="selectedProject.reference_no"></span></p>
+                        <p><strong>Status:</strong> <span x-text="selectedProject.remark"></span></p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold">Client Contact</h4>
+                    <p><strong>Address:</strong> <span x-text="selectedProject.client_name_and_address.address"></span></p>
+                    <p><strong>Phone:</strong> <span x-text="selectedProject.client_name_and_address.contact.phone"></span></p>
+                    <p><strong>Email:</strong> <span x-text="selectedProject.client_name_and_address.contact.email"></span></p>
+                </div>
+            </div>
+        </template>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("alpine:init", () => {
+            Alpine.data('projectsPage', () => ({
+                projects: [],
+                selectedProject: null,
+
+                init() {
+                    fetch('assets/projects.json')
+                        .then(response => {
+                            console.log(response); // Check if it's logging
+                            return response.json();
+                        })
+                        .then(data => {
+                            this.projects = data;
+                        })
+                        .catch(error => console.log('Error fetching JSON:', error)); // Added error handling
+                },
+
+                selectProject(project) {
+                    this.selectedProject = project;
+                }
+            }));
+        });
+    });
+</script>
+
+     <!-- Footer Section -->
+     <div hx-get="components/footer.html" hx-trigger="load"></div>
+</body>
+</html>

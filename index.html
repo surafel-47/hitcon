@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitcon Engineering - Excellence in Engineering Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#f97316',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans">
+   
+     <!-- TopNavbar -->
+    <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
+
+    <!-- Hero Section -->
+    <section class="relative h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">HITCON ENGINEERING</h1>
+                <p class="text-xl text-white mb-8">HITCON Engineering PLC is a consulting firm specializing in development, highways, transport, and bridges. Registered with the Ministry of Works, Infrastructure, and MoFED, it operates from Sarbet Karl Square, Dokimas Building, 2nd floor.</p>
+                <a href="#" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">EXPLORE OUR PROJECTS</a>
+            </div>
+        </div>
+    </section>
+
+
+     
+     <!-- Our Services -->
+     <div hx-get="components/servicesSection.html" hx-trigger="load"></div>
+
+    <!-- Team Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Stat 1 -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-secondary mb-2">31+</div>
+                    <div class="text-lg font-medium text-primary">Engineers</div>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-secondary mb-2">20+</div>
+                    <div class="text-lg font-medium text-primary">Inspectors</div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-secondary mb-2">4</div>
+                    <div class="text-lg font-medium text-primary">Hydrologists</div>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-secondary mb-2">3+</div>
+                    <div class="text-lg font-medium text-primary">Environmentalists</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-primary mb-4">INNOVATIVE ENGINEERING SOLUTIONS</h2>
+                    <div class="w-24 h-1 bg-secondary mb-6"></div>
+                    <p class="text-gray-700 mb-4">
+                        HITCON Engineering is a premier multidisciplinary engineering firm with extensive experience in Structures, Transportation Infrastructure, Energy, Water Resources, and Environmental Engineering.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Since our founding, we have been providing exceptional Architectural & Engineering Services and Development Consulting Services globally, implementing projects across Asia, the Middle East, Europe, Africa, and the Americas.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Our team of highly qualified professionals is committed to delivering innovative and sustainable solutions that exceed client expectations.
+                    </p>
+                    <a href="#" class="bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">LEARN MORE</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Engineering team working" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">FEATURED PROJECTS</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Highway Project" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Central Highway Expansion</h3>
+                        <p class="text-gray-200">Transportation Infrastructure</p>
+                    </div>
+                    <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a href="#" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Water Treatment Facility" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Metro Water Treatment Plant</h3>
+                        <p class="text-gray-200">Water Resources</p>
+                    </div>
+                    <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a href="#" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Building" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Skyline Tower Complex</h3>
+                        <p class="text-gray-200">Structural Engineering</p>
+                    </div>
+                    <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a href="#" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">VIEW ALL PROJECTS</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Vision and Core Values Section -->
+    <section id="vision" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4 text-center">OUR VISION</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+                <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <p class="text-gray-700 mb-4 italic text-lg">
+                        "Hitcon Engineering PLC envisions a world where safe, sustainable infrastructure unites communities. Our commitment extends beyond contracting; it's about connecting people, nurturing progress, and leaving a lasting legacy. As we build roads and bridges, we pave the way for economic growth, environmental stewardship, and safer journeys. Our vision is to be the trusted partner that transforms landscapes, enhances mobility, and shapes a brighter future."
+                    </p>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="text-3xl font-bold text-primary mb-4 text-center">CORE VALUES</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+                <p class="text-center mb-8 text-gray-700">Hitcon Engineering PLC, Highway and transport consultancy our core values are, but not limited to:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Integrity</h3>
+                        <p class="text-gray-700 text-center">
+                            We uphold the highest ethical standards in all our interactions. Trust is the foundation of our relationships with clients, partners, and colleagues.
+                        </p>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Excellence</h3>
+                        <p class="text-gray-700 text-center">
+                            We strive for excellence in every project. Quality skill, attention to detail, and continuous improvement are non-negotiable.
+                        </p>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Collaboration</h3>
+                        <p class="text-gray-700 text-center">
+                            We believe in the power of teamwork. Collaboration fuels innovation, and diverse perspectives lead to better solutions.
+                        </p>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Sustainability</h3>
+                        <p class="text-gray-700 text-center">
+                            We are stewards of the environment. Our commitment to sustainable practices ensures a positive impact on future generations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- News Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">LATEST NEWS</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500">March 15, 2025</span>
+                        <h3 class="text-xl font-bold text-primary mt-2 mb-4">HITCON Awarded Major Highway Project in Southeast Asia</h3>
+                        <p class="text-gray-600 mb-4">HITCON Engineering has been awarded a contract for the design and supervision of a major highway project in Southeast Asia...</p>
+                        <a href="#" class="text-secondary hover:text-orange-600 font-medium">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500">February 28, 2025</span>
+                        <h3 class="text-xl font-bold text-primary mt-2 mb-4">Completion of Innovative Water Treatment Facility</h3>
+                        <p class="text-gray-600 mb-4">HITCON Engineering announces the successful completion of an innovative water treatment facility that will serve over 500,000 residents...</p>
+                        <a href="#" class="text-secondary hover:text-orange-600 font-medium">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500">January 10, 2025</span>
+                        <h3 class="text-xl font-bold text-primary mt-2 mb-4">HITCON's CEO Elected to Engineering Board of Excellence</h3>
+                        <p class="text-gray-600 mb-4">We are proud to announce that our CEO has been elected as a board member of the International Engineering Board of Excellence...</p>
+                        <a href="#" class="text-secondary hover:text-orange-600 font-medium">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="border-2 border-primary hover:bg-primary text-primary hover:text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">VIEW ALL NEWS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">READY TO WORK WITH US?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Let's discuss how HITCON Engineering can help bring your project to life with our innovative engineering solutions.</p>
+            <a href="#" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">CONTACT US TODAY</a>
+        </div>
+    </section>
+
+     <!-- Footer Section -->
+     <div hx-get="components/footer.html" hx-trigger="load"></div>
+</body>
+</html>

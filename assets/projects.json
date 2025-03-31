@@ -1,0 +1,78 @@
+[
+    {
+      "project_no": 1,
+      "project_name": "Consultancy service for the Construction Supervision of Road Safety Works Package I Projects: Adigrat, Combolcha and Alemgena Road Network Management Directorate (Two Project)",
+      "client_name_and_address": {
+        "client_name": "Ethiopian Roads Authority",
+        "address": "Ras Abebe Aregay Street, Addis Ababa, Ethiopia",
+        "contact": {
+          "phone": "251-11-5150419",
+          "email": "eraengproceci@gmail.com"
+        },
+        "employee": {
+          "name": "John Doe",
+          "position": "Project Manager",
+          "email": "john.doe@era.gov.et",
+          "phone": "251-11-5150420"
+        }
+      },
+      "project_location": "Tigray, Afar, and Oromia, Region",
+      "project_complexity": "Supervision of road safety works",
+      "project_type": "Sole Consultant",
+      "project_period": "February 25, 2021 – February 11, 2024",
+      "reference_no": "S/112/NCB/RFP/GOE/2010EFY",
+      "remark": "Ongoing Project > 100%",
+      "project_banner_image": "https://example.com/images/project1-banner.jpg"
+    },
+    {
+      "project_no": 2,
+      "project_name": "Feasibility Study for the Expansion of Addis Ababa Bole International Airport",
+      "client_name_and_address": {
+        "client_name": "Ethiopian Civil Aviation Authority",
+        "address": "Bole, Addis Ababa, Ethiopia",
+        "contact": {
+          "phone": "251-11-6612400",
+          "email": "info@ecaa.gov.et"
+        },
+        "employee": {
+          "name": "Jane Smith",
+          "position": "Project Coordinator",
+          "email": "jane.smith@ecaa.gov.et",
+          "phone": "251-11-6612401"
+        }
+      },
+      "project_location": "Addis Ababa, Ethiopia",
+      "project_complexity": "Feasibility study for airport expansion",
+      "project_type": "Joint Venture",
+      "project_period": "July 1, 2020 – December 31, 2022",
+      "reference_no": "A/12/JS/FAA/2020/ECY",
+      "remark": "Completed Project",
+      "project_banner_image": "https://example.com/images/project2-banner.jpg"
+    },
+    {
+      "project_no": 3,
+      "project_name": "Design and Construction of New Road Infrastructure in Bahir Dar",
+      "client_name_and_address": {
+        "client_name": "Ministry of Transport",
+        "address": "Meskel Square, Addis Ababa, Ethiopia",
+        "contact": {
+          "phone": "251-11-1560000",
+          "email": "transportministry@ethio.gov.et"
+        },
+        "employee": {
+          "name": "Samuel Kassa",
+          "position": "Lead Engineer",
+          "email": "samuel.kassa@transport.gov.et",
+          "phone": "251-11-1560001"
+        }
+      },
+      "project_location": "Bahir Dar, Amhara Region, Ethiopia",
+      "project_complexity": "Design and construction of new roads",
+      "project_type": "Sub Consultant",
+      "project_period": "January 1, 2022 – June 30, 2025",
+      "reference_no": "D/34/NCB/RFP/GOE/2022EFY",
+      "remark": "Planned Project",
+      "project_banner_image": "https://example.com/images/project3-banner.jpg"
+    }
+  ]
+  

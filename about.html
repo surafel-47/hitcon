@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hitcon Engineering - Excellence in Engineering Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#f97316',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans">
+     
+     <!-- TopNavbar -->
+     <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
+
+    <!-- Page Header -->
+    <section class="relative h-[300px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">ABOUT HITCON ENGINEERING</h1>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-6">About HITCON Engineering PLC</h2>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    HITCON Engineering PLC specializes in highway, transport, and bridge consulting, offering a full range of services for road and infrastructure projects. Registered with the Ministry of Works, Infrastructure, and MoFED, the company provides expert solutions in engineering design, project management, and contract supervision.
+                </p>
+                <div class="flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Engineering team" class="rounded-lg shadow-xl w-full max-w-3xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+     <!-- Our Services -->
+     <div hx-get="components/servicesSection.html" hx-trigger="load"></div>
+
+    <!-- Expertise Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-6 text-center">Our Expertise</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-10"></div>
+                
+                <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+                    HITCON Engineering PLC is built on a team of highly skilled professionals with extensive experience in various engineering disciplines.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-hard-hat text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Engineering Team</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Resident Engineers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Highway Engineers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Structural Engineers</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Technical Specialists</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Hydrologists</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Geotechnical Engineers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Material Engineers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Contract Engineers</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3 text-center">Support Team</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Transport Economists</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Environmentalists</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
+                                <span>Technicians</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-gray-700 text-center">
+                    With our experienced staff and unwavering commitment to excellence, we ensure high-quality project execution at every stage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Facilities Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-6 text-center">Office Facilities & Equipment</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-10"></div>
+                
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+                    <div class="md:w-1/2">
+                        <p class="text-lg text-gray-700 mb-6">
+                            HITCON Engineering PLC operates from a fully equipped 40+ sq. m office with essential facilities for engineering consultancy.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-primary mb-4">Equipment Inventory:</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fas fa-laptop text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-2">Computers</h4>
+                                    <p class="text-gray-700">7 Laptops, 7 Desktops</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fas fa-print text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-2">Printing & Scanning</h4>
+                                    <p class="text-gray-700">7 Printers, 3 Photocopiers, 2 Scanners</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fas fa-camera text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-2">Other Equipment</h4>
+                                    <p class="text-gray-700">4 Digital Cameras, 1 Fax Machine, 1 Plotter, 1 Blueprint Machine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Office facilities" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-6 text-center">Software & In-House Applications</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-10"></div>
+                
+                <p class="text-lg text-gray-700 mb-8 text-center">
+                    HITCON Engineering PLC utilizes advanced engineering and project management software to deliver exceptional results.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-primary mb-4">Design & Planning Software</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>AutoCAD</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>In-Roads</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Primavera</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>MS Project</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-primary mb-4">Bridge & Road Analysis</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Bridge Management Software (BMS)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Bridge Maintenance Cost Estimate</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-primary mb-6 text-center">Custom-Developed Applications</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-primary bg-opacity-5 p-6 rounded-lg border-l-4 border-secondary">
+                        <h4 class="font-bold text-primary mb-2">RAMS Inventory Condition Survey</h4>
+                        <p class="text-gray-700">Data Collection</p>
+                    </div>
+                    
+                    <div class="bg-primary bg-opacity-5 p-6 rounded-lg border-l-4 border-secondary">
+                        <h4 class="font-bold text-primary mb-2">RAMS Visual Road Condition Survey</h4>
+                        <p class="text-gray-700">Data Collection</p>
+                    </div>
+                    
+                    <div class="bg-primary bg-opacity-5 p-6 rounded-lg border-l-4 border-secondary">
+                        <h4 class="font-bold text-primary mb-2">Traffic Count Application</h4>
+                        <p class="text-gray-700">Data Analysis</p>
+                    </div>
+                    
+                    <div class="bg-primary bg-opacity-5 p-6 rounded-lg border-l-4 border-secondary">
+                        <h4 class="font-bold text-primary mb-2">Road Safety Condition Data Collection</h4>
+                        <p class="text-gray-700">Under Development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Table Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-6 text-center">Our Team</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-10"></div>
+                
+                <div class="overflow-x-auto shadow-lg rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200" x-data="{ staff: [] }" x-init="fetch('assets/staff.json')
+                    .then(response => response.json())
+                    .then(data => staff = data)">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Staff's Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Profession</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Education Qualification</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Total Experience</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Experience in Respective Position</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">No of Year with the Firm</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Relation With the Firm</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <template x-for="person in staff" :key="person.name">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" x-text="person.name"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.profession"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.education"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.total_experience"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.position_experience"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.years_with_firm"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="person.relation"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Footer Section -->
+     <div hx-get="components/footer.html" hx-trigger="load"></div>
+</body>
+</html>
