@@ -1,0 +1,33 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;  /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;  /* Light background color for the track */
+    border-radius: 10px;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #888;  /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Handle on hover (when the user hovers over the scrollbar thumb) */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;  /* Darker color when hovered */
+}
+
+/* For horizontal scrollbar (optional, if you want to style horizontal scrolling as well) */
+::-webkit-scrollbar-horizontal {
+    height: 12px;
+}
+
+/* For vertical scrollbar (optional, if you want to style vertical scrolling as well) */
+::-webkit-scrollbar-vertical {
+    width: 12px;
+}
