@@ -1,78 +1,777 @@
 [
+  {
+    "projectName": "Consultancy Service for the Construction Supervision of Road Safety Works Package I Projects: Adigrat, Combolcha and Alemgena Road Network Management Directorate (Two Project)",
+    "client": "ERA",
+    "projectLocation": "Oromia Regions",
+    "serviceCategory": [
+      "Construction Supervision Services"
+    ],
+    "specificServicesRendered": [
+      "Condition Survey",
+      "Assessment on the Bill of Quantities",
+      "Quality Control",
+      "Material Sampling and Testing",
+      "Prepare Design Changes",
+      "Review Contractor’s Work Program"
+    ],
+    "projectDurationMonths": "24 Months",
+    "contractValue": "12,556,608.50 ETB",
+    "consultancyRole": "Sole Consultant",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": 1079,
+    "pavementType": "Paved",
+    "referenceNo": "S/112/NCB/RFP/GOE/2010EFY",
+    "sourceTestimony": "Am8/28/7-169"
+  },
+  {
+    "projectName": "Consultancy service for Construction Supervision of Koshe – Mito – Werabe Design and Build Road Project",
+    "client": "ERA",
+    "projectLocation": "SNNP Region",
+    "serviceCategory": [
+      "Construction Supervision Services"
+    ],
+    "specificServicesRendered": [
+      "Construction Supervision",
+      "Review of Design Documents & Working Drawings",
+      "Pre-construction Contractor Monitoring & Coordination",
+      "Monitoring & Control of Construction Activities",
+      "Quality Control of Materials",
+      "Preparation of Reports & As-built Records",
+      "Fiscal Control",
+      "Final Inspection & Certification of Works"
+    ],
+    "projectDurationMonths": "36 Months",
+    "contractValue": "73,838,819.00 ETB",
+    "consultancyRole": "Sub Consultancy",
+    "projectStatus": "Ongoing (98%)",
+    "roadLengthKm": 72.91,
+    "pavementType": "AC",
+    "referenceNo": "S/40/ICB/RFP/GOE/2012EFY",
+    "sourceTestimony": "Am8/28/20-170, Am8/22/24-137"
+  },
+  {
+    "projectName": "Consultancy Service for Road Management Support Services II; Lot-1: Road Network Under Adigrat, Combolcha, Debremarkos & Gonder Road Network Safety Management Directorates",
+    "client": "ERA",
+    "projectLocation": "Adigrat, Afar, Amhara Region",
+    "serviceCategory": [
+      "Technical Assistance Services"
+    ],
+    "specificServicesRendered": [
+      "Road Inventory Survey (Paved & Unpaved)",
+      "Road Condition Survey (Paved & Unpaved)",
+      "Network Condition Analysis & Treatment Identification",
+      "Road Maintenance Action Plan",
+      "Traffic Count",
+      "Collect As-built Drawings"
+    ],
+    "projectDurationMonths": "24 Months",
+    "contractValue": "59,872,881.92 ETB",
+    "consultancyRole": "Sole Consultant",
+    "projectStatus": "Ongoing (90%)",
+    "roadLengthKm": 9543,
+    "pavementType": "Paved & Unpaved Roads",
+    "referenceNo": "S/57/NCB/RFP/GOE/2012EFY",
+    "sourceTestimony": "December/2023"
+  },
+  {
+    "projectName": "Consultancy service for Construction Supervision of Bilalo – Kersa – Arsi Negelle Road Project",
+    "client": "ERA",
+    "projectLocation": "Oromia Region",
+    "serviceCategory": [
+      "Construction Supervision Services"
+    ],
+    "specificServicesRendered": [
+      "Construction Supervision",
+      "Review of Design Documents & Working Drawings",
+      "Pre-construction Contractor Monitoring & Coordination",
+      "Monitoring & Control of Construction Activities",
+      "Quality Control of Materials",
+      "Preparation of Reports & As-built Records",
+      "Fiscal Control",
+      "Final Inspection & Certification of Works"
+    ],
+    "projectDurationMonths": "24 Months",
+    "contractValue": "29.99 Million ETB",
+    "consultancyRole": "Sub Consultancy",
+    "projectStatus": "Ongoing (93.10%)",
+    "roadLengthKm": 93,
+    "pavementType": "AC with DC-5 Standard",
+    "referenceNo": "S/104/ICB/RFP/GOE/2010EFY",
+    "sourceTestimony": "Am8/28/17-167"
+  },
+  {
+    "projectName": "Consultancy service for Impact Assessment of Universal Rural Road Access Program (URRAP), Lot 2: Oromia, Harari, Gambella & Dire Dawa",
+    "client": "ERA",
+    "projectLocation": "Oromia, Harari, Gambella Regions & Dire Dawa City",
+    "serviceCategory": [
+      "Technical Assistance Services"
+    ],
+    "specificServicesRendered": [
+      "Baseline Socio-economic Analysis",
+      "Develop Social Outcome Indicators",
+      "Longitudinal Welfare Impact Evaluation",
+      "Recurrent Data Collection & Analysis"
+    ],
+    "projectDurationMonths": "36 Months",
+    "contractValue": "19.1 Million ETB",
+    "consultancyRole": "JV & Sub Consultancy",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": null,
+    "pavementType": null,
+    "referenceNo": "S/111/NCB/RFP/GOE/2010EFY",
+    "sourceTestimony": "Am8/22/11-137"
+  },
+  {
+    "projectName": "Detailed Engineering Design & Tender Document Preparation of Bridges under Shashemene Road Network & Safety Directorate (Package XI)",
+    "client": "ERA",
+    "projectLocation": "Oromia Region",
+    "serviceCategory": [
+      "Engineering Design Services"
+    ],
+    "specificServicesRendered": [
+      "Topographic Surveying",
+      "Geometric, Structural, Hydrology & Geotechnical Design",
+      "Environmental Impact Assessment",
+      "Tender Document Preparation"
+    ],
+    "projectDurationMonths": "6 Months",
+    "contractValue": "5.9 Million ETB",
+    "consultancyRole": "Sole Consultant",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": null,
+    "pavementType": null,
+    "referenceNo": "S/70/NCB/RFP/GOE/2011EFY",
+    "sourceTestimony": "Amg/22/10-137"
+  },
+  {
+    "projectName": "Consultancy Service for Construction Supervision of Sansusi – Tatek Kella Town Road Project",
+    "client": "ERA",
+    "projectLocation": "Oromia Region",
+    "serviceCategory": [
+      "Construction Supervision Services"
+    ],
+    "specificServicesRendered": [
+      "Construction Supervision",
+      "Review of Design Documents & Working Drawings",
+      "Pre-construction Contractor Monitoring & Coordination",
+      "Monitoring & Control of Construction Activities",
+      "Quality Control of Materials",
+      "Preparation of Reports & As-built Records",
+      "Fiscal Control",
+      "Final Inspection & Certification of Works"
+    ],
+    "projectDurationMonths": "36 Months",
+    "contractValue": "12.4 Million ETB",
+    "consultancyRole": "Sub Consultancy",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": 13.56,
+    "pavementType": "AC",
+    "referenceNo": "S/75/NCB/RFP/GOE/2009EFY",
+    "sourceTestimony": "Amg/22/16-137"
+  },
+  {
+    "projectName": "Consultancy service for Road Network Management Support (RNMS) Lot 1: Alemgena, Debre Markos, Combolcha, Adigrat & Gonder",
+    "client": "ERA",
+    "projectLocation": "Oromia, Amhara & Tigray Regions",
+    "serviceCategory": [
+      "Technical Assistance Services"
+    ],
+    "specificServicesRendered": [
+      "Road Condition Survey",
+      "Maintenance Treatment Identification",
+      "Quantity & Cost Estimation",
+      "Project Prioritization & Formulation",
+      "Road Maintenance Action Plan",
+      "Bid Document Preparation",
+      "Black Spot Identification",
+      "Safe & Green Road Strategy"
+    ],
+    "projectDurationMonths": "24 Months",
+    "contractValue": "13.67 Million ETB",
+    "consultancyRole": "Sole Consultant",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": 12655,
+    "pavementType": "Paved & Unpaved",
+    "referenceNo": "S/84/NCB/RFP/GOE/2006EFY",
+    "sourceTestimony": "Am8/13/13-91"
+  },
+  {
+    "projectName": "Consultancy Services for Establishing National Road Database on Web-based Application & Harmonization at National Level",
+    "client": "MOFED",
+    "projectLocation": "SNNP, Amhara, Tigray, Gambella, Benishangul-Gumuz & Afar Regions",
+    "serviceCategory": [
+      "Technical Assistance Services"
+    ],
+    "specificServicesRendered": [
+      "Web-GIS Application Development (ERIMS)",
+      "Road Inventory & Condition Survey (47,500 km)",
+      "Data Editing (MapSource, ArcGIS, QGIS)",
+      "Data Encoding to Web System",
+      "Stakeholder Workshops & Steering Committee"
+    ],
+    "projectDurationMonths": "12 Months",
+    "contractValue": "27.9 Million ETB",
+    "consultancyRole": "JV",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": 47500,
+    "pavementType": "Paved & Unpaved",
+    "referenceNo": "PBS3B3/COP/C-8/1",
+    "sourceTestimony": "Am8/11/20-79"
+  },
+  {
+    "projectName": "Consultancy Services for Bridge Management Support Services Lot 3: Combolcha, Dire Dawa & Shashemene Districts",
+    "client": "ERA",
+    "projectLocation": "Combolcha, Dire Dawa & Shashemene Districts",
+    "serviceCategory": [
+      "Technical Assistance Services"
+    ],
+    "specificServicesRendered": [
+      "Bridge Asset Management Support Services"
+    ],
+    "projectDurationMonths": "24 Months",
+    "contractValue": "11,207,900.00 ETB",
+    "consultancyRole": "Sole Consultant",
+    "projectStatus": "Completed (100%)",
+    "roadLengthKm": 2964,
+    "pavementType": null,
+    "referenceNo": "S/79/NCB/RP/GOE/2006EFY",
+    "sourceTestimony": "T-09"
+  },
     {
-      "project_no": 1,
-      "project_name": "Consultancy service for the Construction Supervision of Road Safety Works Package I Projects: Adigrat, Combolcha and Alemgena Road Network Management Directorate (Two Project)",
-      "client_name_and_address": {
-        "client_name": "Ethiopian Roads Authority",
-        "address": "Ras Abebe Aregay Street, Addis Ababa, Ethiopia",
-        "contact": {
-          "phone": "251-11-5150419",
-          "email": "eraengproceci@gmail.com"
-        },
-        "employee": {
-          "name": "John Doe",
-          "position": "Project Manager",
-          "email": "john.doe@era.gov.et",
-          "phone": "251-11-5150420"
-        }
-      },
-      "project_location": "Tigray, Afar, and Oromia, Region",
-      "project_complexity": "Supervision of road safety works",
-      "project_type": "Sole Consultant",
-      "project_period": "February 25, 2021 – February 11, 2024",
-      "reference_no": "S/112/NCB/RFP/GOE/2010EFY",
-      "remark": "Ongoing Project > 100%",
-      "project_banner_image": "https://via.assets.so/game.png?id=12&q=98&w=1270&h=720"
+      "projectName": "Consultancy Services for The Topographic Survey and Study of Gogecha, Modjo And Awash Bridges & Supervision of Awash Bridge",
+      "client": "JICA",
+      "projectLocation": "Afar and Oromia Regions",
+      "serviceCategory": [
+        "Technical Assistance Services",
+        "Construction Supervision Services"
+      ],
+      "specificServicesRendered": [
+        "Topographic Survey",
+        "Study of Existing Bridges",
+        "Supervision of Awash Bridge"
+      ],
+      "projectDurationMonths": "33 Months (April 2010 – January 2013)",
+      "contractValue": "912,800.00 ETB",
+      "consultancyRole": "Sub Consultant",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": "Testimony Reference No. CCI-46A4003-OTH-012-2015"
     },
     {
-      "project_no": 2,
-      "project_name": "Feasibility Study for the Expansion of Addis Ababa Bole International Airport",
-      "client_name_and_address": {
-        "client_name": "Ethiopian Civil Aviation Authority",
-        "address": "Bole, Addis Ababa, Ethiopia",
-        "contact": {
-          "phone": "251-11-6612400",
-          "email": "info@ecaa.gov.et"
-        },
-        "employee": {
-          "name": "Jane Smith",
-          "position": "Project Coordinator",
-          "email": "jane.smith@ecaa.gov.et",
-          "phone": "251-11-6612401"
-        }
-      },
-      "project_location": "Addis Ababa, Ethiopia",
-      "project_complexity": "Feasibility study for airport expansion",
-      "project_type": "Joint Venture",
-      "project_period": "July 1, 2020 – December 31, 2022",
-      "reference_no": "A/12/JS/FAA/2020/ECY",
-      "remark": "Completed Project",
-      "project_banner_image": "https://via.assets.so/game.png?id=10&q=98&w=1270&h=720"
+      "projectName": "Consultancy service for Construction Supervision of Routine and periodic Maintenance Projects under Sodo Road Network and Safety Management Branch Directorates",
+      "client": "ERA",
+      "projectLocation": "Sodo Road Network and Safety Management Branch Directorates",
+      "serviceCategory": [
+        "Construction Supervision Services"
+      ],
+      "specificServicesRendered": [
+        "Supervision of Road maintenance works"
+      ],
+      "projectDurationMonths": "24 Months",
+      "contractValue": "519 million ETB",
+      "consultancyRole": "JV",
+      "projectStatus": "Ongoing (15%)",
+      "roadLengthKm": 3917,
+      "pavementType": "Paved and Unpaved",
+      "referenceNo": null,
+      "sourceTestimony": null
     },
     {
-      "project_no": 3,
-      "project_name": "Design and Construction of New Road Infrastructure in Bahir Dar",
-      "client_name_and_address": {
-        "client_name": "Ministry of Transport",
-        "address": "Meskel Square, Addis Ababa, Ethiopia",
-        "contact": {
-          "phone": "251-11-1560000",
-          "email": "transportministry@ethio.gov.et"
-        },
-        "employee": {
-          "name": "Samuel Kassa",
-          "position": "Lead Engineer",
-          "email": "samuel.kassa@transport.gov.et",
-          "phone": "251-11-1560001"
-        }
+      "projectName": "Consultancy service for Construction Supervision of Routine and periodic Maintenance Projects under Shashemene Road Network and Safety Management Branch Directorates",
+      "client": "ERA",
+      "projectLocation": "Shashemene Road Network and Safety Management Branch Directorates",
+      "serviceCategory": [
+        "Construction Supervision Services"
+      ],
+      "specificServicesRendered": [
+        "Supervision of Road maintenance works"
+      ],
+      "projectDurationMonths": "24 Months",
+      "contractValue": "454 million ETB (including DLP)",
+      "consultancyRole": "Sole Consultant",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": 2067,
+      "pavementType": "Paved & Unpaved",
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy service for the Construction Supervision of Meno – Fejej - Heavy Maintenance Road Project under Sodo Road Network and Safety Management Directorates",
+      "client": "ERA",
+      "projectLocation": "Sodo Road Network and Safety Management Directorates",
+      "serviceCategory": [
+        "Construction Supervision Services"
+      ],
+      "specificServicesRendered": [
+        "Construction Supervision"
+      ],
+      "projectDurationMonths": "24 Months",
+      "contractValue": "399 million ETB",
+      "consultancyRole": "Joint Venture",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": 38,
+      "pavementType": "Unpaved",
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy service for the ReCAP Impact case study of low volume roads in Ethiopia",
+      "client": "Cardno Emerging Market (UK) Ltd",
+      "projectLocation": "Ethiopia",
+      "serviceCategory": [
+        "Technical Assistance Services"
+      ],
+      "specificServicesRendered": [
+        "Study"
+      ],
+      "projectDurationMonths": "7 Months",
+      "contractValue": null,
+      "consultancyRole": "Sole Consultant",
+      "projectStatus": "Completed (90%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy service for Monitoring and Evaluation of low volume roads Trial section in Ethiopia",
+      "client": "Cardno Emerging Market (UK) Ltd",
+      "projectLocation": "Ethiopia",
+      "serviceCategory": [
+        "Technical Assistance Services"
+      ],
+      "specificServicesRendered": [
+        "Monitoring and Evaluation"
+      ],
+      "projectDurationMonths": "12 Months",
+      "contractValue": null,
+      "consultancyRole": "JV",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy Services For Design and Build of Modjo - Hawassa Highway Project; Phase I: Modjo – Zeway, Lot II: Meki – Zeway Section",
+      "client": "ERA",
+      "projectLocation": "Modjo – Zeway & Meki – Zeway Sections",
+      "serviceCategory": [
+        "Technical Assistance Services"
+      ],
+      "specificServicesRendered": [
+        "Topographic Survey"
+      ],
+      "projectDurationMonths": "4 Months",
+      "contractValue": null,
+      "consultancyRole": "Sub-Consultant",
+      "projectStatus": "Ongoing (15%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy Services For Feasibility Study for possible Financing Consideration of Mieso - Dire Dawa Road Upgrading Project",
+      "client": "ERA",
+      "projectLocation": "Mieso - Dire Dawa",
+      "serviceCategory": [
+        "Technical Assistance Services"
+      ],
+      "specificServicesRendered": [
+        "Feasibility Study"
+      ],
+      "projectDurationMonths": "2 Months",
+      "contractValue": null,
+      "consultancyRole": "Sub-Consultant",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Consultancy Services For the baseline Environmental Study for Jimma – Agaro – Dedessa River Road Rehabilitation Feasibility Study",
+      "client": "ERA",
+      "projectLocation": "Jimma – Agaro – Dedessa River Road Rehabilitation",
+      "serviceCategory": [
+        "Technical Assistance Services"
+      ],
+      "specificServicesRendered": [
+        "Baseline Environmental Study"
+      ],
+      "projectDurationMonths": "1 Month",
+      "contractValue": null,
+      "consultancyRole": "Sub-Consultant",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": null,
+      "pavementType": null,
+      "referenceNo": null,
+      "sourceTestimony": null
+    },
+    {
+      "projectName": "Continuation of Consultancy Services for the Construction Supervision of Mekenajo – Dembidolo Road Upgrading Project (Contract 1: Mekenajo – Ayra)",
+      "client": "ERA",
+      "projectLocation": "Oromia Regions",
+      "serviceCategory": [
+        "Construction Supervision Services"
+      ],
+      "specificServicesRendered": [
+        "Supervision of Road Project"
+      ],
+      "projectDurationMonths": "36 Months (July 2014 – July 2017)",
+      "contractValue": "6 000 000 ETB and 334 800 USD",
+      "consultancyRole": "Sub-Consultant",
+      "projectStatus": "Completed (100%)",
+      "roadLengthKm": 52.06,
+      "pavementType": "AC",
+      "referenceNo": "S/79/ICB/RP/GOE/2006EFY",
+      "sourceTestimony": "Testimony No. T-13"
+    },
+
+      {
+        "projectName": "Consultancy Services for Bridge Management Support Services Lot:1: Alemgena, Sodo, Nekempte and Jimma District",
+        "client": "ERA",
+        "projectLocation": "Oromia and South Regions",
+        "serviceCategory": [
+          "Technical Assistance Services"
+        ],
+        "specificServicesRendered": [
+          "Bridge asset management support services"
+        ],
+        "projectDurationMonths": "24 Months",
+        "contractValue": "11,483,900.00 ETB",
+        "consultancyRole": "Sole Consultant",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 10098,
+        "pavementType": null,
+        "referenceNo": null,
+        "sourceTestimony": null
       },
-      "project_location": "Bahir Dar, Amhara Region, Ethiopia",
-      "project_complexity": "Design and construction of new roads",
-      "project_type": "Sub Consultant",
-      "project_period": "January 1, 2022 – June 30, 2025",
-      "reference_no": "D/34/NCB/RFP/GOE/2022EFY",
-      "remark": "Planned Project",
-      "project_banner_image": "https://via.assets.so/game.png?id=11&q=98&w=1270&h=720"
-    }
-  ]
-  
+      {
+        "projectName": "Consultancy Services for Detailed Engineering Design and Tender Document Preparation (Phase I) and Construction Supervision (Phase II) of Bridges under Combolcha-3 District (Package, Two Bridges)",
+        "client": "ERA",
+        "projectLocation": "Afar Region",
+        "serviceCategory": [
+          "Engineering Design Services",
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Detailed engineering design of 3 bridges",
+          "Tender document preparation",
+          "Construction supervision"
+        ],
+        "projectDurationMonths": "Phase I: 4 Months; Phase II: 9 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Phase I 100%; Phase II Yet to be Commenced",
+        "roadLengthKm": null,
+        "pavementType": null,
+        "referenceNo": "S/32/NCB/RP/GE/2003EFY",
+        "sourceTestimony": "Testimony No. T-03"
+      },
+      {
+        "projectName": "Consultancy Services for Detailed Engineering Design and Tender Document Preparation (Phase I) and Construction Supervision (Phase II) of Bridge under Adigrat District (64 m Span Bridge)",
+        "client": "ERA",
+        "projectLocation": "Tigray Region",
+        "serviceCategory": [
+          "Engineering Design Services",
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Detailed engineering design of bridge",
+          "Tender document preparation",
+          "Construction supervision"
+        ],
+        "projectDurationMonths": "Phase I: 4 Months; Phase II: 9 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Phase I 100%; Phase II 100%",
+        "roadLengthKm": null,
+        "pavementType": null,
+        "referenceNo": "S/29/NCB/RP/GE/2003EFY",
+        "sourceTestimony": "Testimony No. T-03"
+      },
+      {
+        "projectName": "Detailed Engineering Design and Construction Supervision of Zarema-Adiarkai-Shire Road Upgrading Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Engineering Design Services",
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Detailed engineering design",
+          "Construction supervision"
+        ],
+        "projectDurationMonths": "8 Months (Design) and 36 Months (Supervision)",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Design 100%; Supervision 80%",
+        "roadLengthKm": 140,
+        "pavementType": "AC",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Assossa-Daleti-Baruda Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 120,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Nekempt-Dedessa Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 32,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Dongoro-Makabilla Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 30,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Gedo-Fincha Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Ongoing",
+        "roadLengthKm": 32,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Mendi-Daleti Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Ongoing",
+        "roadLengthKm": 38,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Jijiga-Teferiber Road Project",
+        "client": "ERA",
+        "projectLocation": null,
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 36,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+    
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Harer-Jarso Road Project",
+        "client": "ERA",
+        "projectLocation": "Harer and Jarso Districts",
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works",
+          "Quality control",
+          "Progress monitoring"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 25,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Gelemso-Mechara Road Project",
+        "client": "ERA",
+        "projectLocation": "Gelemso and Mechara Districts",
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works",
+          "Quality control",
+          "Progress monitoring"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 32,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Babile-Fik Road Project",
+        "client": "ERA",
+        "projectLocation": "Babile and Fik Districts",
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works",
+          "Quality control",
+          "Progress monitoring"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": 120,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Adele-Grawa Road Project",
+        "client": "ERA",
+        "projectLocation": "Adele and Grawa Districts",
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works",
+          "Quality control",
+          "Progress monitoring"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Ongoing",
+        "roadLengthKm": 30,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Supervision of Periodic Maintenance Works of Bike-Afdem Road Project",
+        "client": "ERA",
+        "projectLocation": "Bike and Afdem Districts",
+        "serviceCategory": [
+          "Construction Supervision Services"
+        ],
+        "specificServicesRendered": [
+          "Supervision of periodic maintenance works",
+          "Quality control",
+          "Progress monitoring"
+        ],
+        "projectDurationMonths": "12 Months",
+        "contractValue": null,
+        "consultancyRole": "JV",
+        "projectStatus": "Ongoing",
+        "roadLengthKm": 30,
+        "pavementType": "Gravel",
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Procurement Of Consultants For Engineering Services Of Package IV Projects",
+        "client": "ERA",
+        "projectLocation": "Ethiopia",
+        "serviceCategory": [
+          "Technical Assistance Services"
+        ],
+        "specificServicesRendered": [
+          "Procurement of consultants for engineering services of Package IV Projects"
+        ],
+        "projectDurationMonths": "5 Months",
+        "contractValue": null,
+        "consultancyRole": "Sub-consultant",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": null,
+        "pavementType": null,
+        "referenceNo": null,
+        "sourceTestimony": null
+      },
+      {
+        "projectName": "Procurement Of Consultants For Engineering Services Of Package III Projects",
+        "client": "ERA",
+        "projectLocation": "Ethiopia",
+        "serviceCategory": [
+          "Technical Assistance Services"
+        ],
+        "specificServicesRendered": [
+          "Procurement of consultants for engineering services of Package III Projects"
+        ],
+        "projectDurationMonths": "5 Months",
+        "contractValue": null,
+        "consultancyRole": "Sub-consultant",
+        "projectStatus": "Completed (100%)",
+        "roadLengthKm": null,
+        "pavementType": null,
+        "referenceNo": null,
+        "sourceTestimony": null
+      }
+    ]
+        

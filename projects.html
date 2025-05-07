@@ -67,7 +67,7 @@
             <h1 class="text-4xl font-bold text-white text-center">Our Projects</h1>
             <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
             <p class="text-white text-center mt-4 max-w-2xl mx-auto">
-                Explore our portfolio of successful projects across transportation, infrastructure, and environmental engineering.
+                Explore our portfolio of successful projects across transportation, infrastructure, and engineering services.
             </p>
         </div>
     </div>
@@ -105,45 +105,63 @@
                             :class="filterCategory === 'all' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
                             All Projects
                         </button>
-                        <button @click="filterCategory = 'roads'" 
+                        <button @click="filterCategory = 'Construction Supervision Services'" 
                             class="px-4 py-2 rounded-full text-sm font-medium transition-colors"
-                            :class="filterCategory === 'roads' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
-                            Roads
+                            :class="filterCategory === 'Construction Supervision Services' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
+                            Construction Supervision
                         </button>
-                        <button @click="filterCategory = 'bridges'" 
+                        <button @click="filterCategory = 'Technical Assistance Services'" 
                             class="px-4 py-2 rounded-full text-sm font-medium transition-colors"
-                            :class="filterCategory === 'bridges' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
-                            Bridges
+                            :class="filterCategory === 'Technical Assistance Services' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
+                            Technical Assistance
                         </button>
-                        <button @click="filterCategory = 'environmental'" 
+                        <button @click="filterCategory = 'Engineering Design Services'" 
                             class="px-4 py-2 rounded-full text-sm font-medium transition-colors"
-                            :class="filterCategory === 'environmental' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
-                            Environmental
+                            :class="filterCategory === 'Engineering Design Services' ? 'bg-primary text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'">
+                            Engineering Design
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div x-data="{
+            imagePool: [
+                '/assets/pics/photo_1_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_2_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_3_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_4_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_5_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_6_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_7_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_9_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_10_2025-05-07_22-11-14.jpg',
+                '/assets/pics/photo_11_2025-05-07_22-11-14.jpg'
+            ],
+            getRandomImage() {
+                const idx = Math.floor(Math.random() * this.imagePool.length);
+                return this.imagePool[idx];
+            }
+        }">
+        
         <!-- Project Grid -->
         <div x-show="!isLoading && !hasError" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <template x-for="project in filteredProjects" :key="project.project_no">
+            <template x-for="project in filteredProjects" :key="project.projectName">
                 <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl cursor-pointer" @click="selectProject(project)">
                     <div class="h-48 overflow-hidden">
                         <img 
-                            :src="project.project_banner_image || 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" 
-                            :alt="project.project_name"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        >
+                        :src="getRandomImage()" 
+                        :alt="project.projectName"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    >
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-bold text-primary line-clamp-2" x-text="project.project_name"></h3>
-                            <span class="bg-secondary bg-opacity-20 text-secondary text-xs px-2 py-1 rounded-full" x-text="project.remark"></span>
+                            <h3 class="text-lg font-bold text-primary line-clamp-2" x-text="project.projectName"></h3>
+                            <span class="bg-secondary bg-opacity-20 text-secondary text-xs px-2 py-1 rounded-full" x-text="project.projectStatus"></span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-3" x-text="project.project_location"></p>
+                        <p class="text-sm text-gray-600 mb-3" x-text="project.projectLocation"></p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-gray-500" x-text="project.project_period"></span>
+                            <span class="text-xs text-gray-500" x-text="project.projectDurationMonths"></span>
                             <button class="text-primary hover:text-secondary transition-colors">
                                 <i class="fas fa-arrow-right"></i>
                             </button>
@@ -195,8 +213,8 @@
                     
                     <div class="h-64 overflow-hidden">
                         <img 
-                            :src="selectedProject?.project_banner_image || 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" 
-                            :alt="selectedProject?.project_name"
+                            :src="getRandomImage()" 
+                            :alt="selectedProject?.projectName"
                             class="w-full h-full object-cover"
                         >
                     </div>
@@ -206,19 +224,19 @@
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-primary bg-opacity-10 text-primary text-xs px-3 py-1 rounded-full">
                             <i class="fas fa-map-marker-alt mr-1"></i>
-                            <span x-text="selectedProject?.project_location"></span>
+                            <span x-text="selectedProject?.projectLocation"></span>
                         </span>
                         <span class="bg-secondary bg-opacity-10 text-secondary text-xs px-3 py-1 rounded-full">
                             <i class="fas fa-calendar-alt mr-1"></i>
-                            <span x-text="selectedProject?.project_period"></span>
+                            <span x-text="selectedProject?.projectDurationMonths"></span>
                         </span>
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">
                             <i class="fas fa-check-circle mr-1"></i>
-                            <span x-text="selectedProject?.remark"></span>
+                            <span x-text="selectedProject?.projectStatus"></span>
                         </span>
                     </div>
                     
-                    <h3 class="text-2xl font-bold text-primary mb-4" x-text="selectedProject?.project_name"></h3>
+                    <h3 class="text-2xl font-bold text-primary mb-4" x-text="selectedProject?.projectName"></h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
                         <div>
@@ -230,15 +248,19 @@
                                 <div class="grid grid-cols-1 gap-3">
                                     <div class="flex">
                                         <span class="font-medium text-gray-700 w-32">Reference No:</span>
-                                        <span x-text="selectedProject?.reference_no" class="text-gray-600"></span>
+                                        <span x-text="selectedProject?.referenceNo" class="text-gray-600"></span>
                                     </div>
                                     <div class="flex">
-                                        <span class="font-medium text-gray-700 w-32">Complexity:</span>
-                                        <span x-text="selectedProject?.project_complexity" class="text-gray-600"></span>
+                                        <span class="font-medium text-gray-700 w-32">Road Length:</span>
+                                        <span x-text="selectedProject?.roadLengthKm + ' km'" class="text-gray-600"></span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="font-medium text-gray-700 w-32">Pavement Type:</span>
+                                        <span x-text="selectedProject?.pavementType" class="text-gray-600"></span>
                                     </div>
                                     <div class="flex">
                                         <span class="font-medium text-gray-700 w-32">Status:</span>
-                                        <span x-text="selectedProject?.remark" class="text-gray-600"></span>
+                                        <span x-text="selectedProject?.projectStatus" class="text-gray-600"></span>
                                     </div>
                                 </div>
                             </div>
@@ -252,20 +274,20 @@
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <div class="grid grid-cols-1 gap-3">
                                     <div class="flex">
-                                        <span class="font-medium text-gray-700 w-32">Client Name:</span>
-                                        <span x-text="selectedProject?.client_name_and_address.client_name" class="text-gray-600"></span>
+                                        <span class="font-medium text-gray-700 w-32">Client:</span>
+                                        <span x-text="selectedProject?.client" class="text-gray-600"></span>
                                     </div>
                                     <div class="flex">
-                                        <span class="font-medium text-gray-700 w-32">Address:</span>
-                                        <span x-text="selectedProject?.client_name_and_address.address" class="text-gray-600"></span>
+                                        <span class="font-medium text-gray-700 w-32">Contract Value:</span>
+                                        <span x-text="selectedProject?.contractValue" class="text-gray-600"></span>
                                     </div>
                                     <div class="flex">
-                                        <span class="font-medium text-gray-700 w-32">Phone:</span>
-                                        <span x-text="selectedProject?.client_name_and_address.contact.phone" class="text-gray-600"></span>
+                                        <span class="font-medium text-gray-700 w-32">Role:</span>
+                                        <span x-text="selectedProject?.consultancyRole" class="text-gray-600"></span>
                                     </div>
                                     <div class="flex">
-                                        <span class="font-medium text-gray-700 w-32">Email:</span>
-                                        <span x-text="selectedProject?.client_name_and_address.contact.email" class="text-gray-600"></span>
+                                        <span class="font-medium text-gray-700 w-32">Source:</span>
+                                        <span x-text="selectedProject?.sourceTestimony" class="text-gray-600"></span>
                                     </div>
                                 </div>
                             </div>
@@ -275,12 +297,30 @@
                     <div class="border-t pt-6">
                         <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
                             <i class="fas fa-tasks mr-2 text-secondary"></i>
-                            Project Description
+                            Services Rendered
                         </h4>
-                        <p class="text-gray-700">
-                            This project involved comprehensive engineering solutions tailored to meet the specific needs of the client. 
-                            Our team of experts worked diligently to ensure the highest quality standards were maintained throughout the project lifecycle.
-                        </p>
+                        <div class="grid grid-cols-1 gap-2">
+                            <template x-for="(service, index) in selectedProject?.specificServicesRendered" :key="index">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                    <span x-text="service" class="text-gray-700"></span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 mt-6">
+                        <h4 class="text-lg font-semibold text-primary mb-3 flex items-center">
+                            <i class="fas fa-tag mr-2 text-secondary"></i>
+                            Service Category
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <template x-for="(category, index) in selectedProject?.serviceCategory" :key="index">
+                                <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">
+                                    <span x-text="category"></span>
+                                </span>
+                            </template>
+                        </div>
                     </div>
                 </div>
                 
@@ -337,19 +377,8 @@
                         return this.projects;
                     }
                     
-                    // This is just for demonstration - in a real app, you'd have a category field
-                    // For demo purposes, we'll filter based on project name
                     return this.projects.filter(project => {
-                        if (this.filterCategory === 'roads') {
-                            return project.project_name.toLowerCase().includes('road') || 
-                                   project.project_name.toLowerCase().includes('highway');
-                        } else if (this.filterCategory === 'bridges') {
-                            return project.project_name.toLowerCase().includes('bridge');
-                        } else if (this.filterCategory === 'environmental') {
-                            return project.project_name.toLowerCase().includes('environmental') || 
-                                   project.project_name.toLowerCase().includes('water');
-                        }
-                        return true;
+                        return project.serviceCategory.includes(this.filterCategory);
                     });
                 },
 

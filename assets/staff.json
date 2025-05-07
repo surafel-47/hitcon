@@ -1,47 +1,146 @@
 [
   {
-    "name": "Tadesse Mulugeta",
-    "profession": "Highway Engineer",
-    "education": "MSc. Civil Engineering",
-    "total_experience": "16 years",
-    "position_experience": "12 years",
-    "years_with_firm": "9 years",
-    "relation": "Permanent Staff"
-  },
-  {
-    "name": "Mekdes Tilahun",
-    "profession": "Structural Engineer",
-    "education": "BSc. Civil Engineering",
-    "total_experience": "10 years",
-    "position_experience": "6 years",
-    "years_with_firm": "4 years",
-    "relation": "Permanent Staff"
-  },
-  {
-    "name": "Abdi Ahmed",
+    "name": "Yohannes W/Chikos",
     "profession": "Geotechnical Engineer",
-    "education": "BSc. Geotechnical Engineering",
-    "total_experience": "8 years",
-    "position_experience": "4 years",
-    "years_with_firm": "3 years",
-    "relation": "Contract Staff"
-  },
-  {
-    "name": "Fatuma Ali",
-    "profession": "Environmental Engineer",
-    "education": "MSc. Environmental Engineering",
-    "total_experience": "5 years",
-    "position_experience": "3 years",
-    "years_with_firm": "2 years",
+    "education": "MSc. in Civil Eng (Railway Engineering)",
+    "total_experience": ">12 years",
+    "position_experience": ">7 years",
+    "years_with_firm": "≥5",
     "relation": "Permanent Staff"
   },
   {
-    "name": "Solomon Tsegaye",
-    "profession": "Transport Economist",
-    "education": "MSc. Transport Economics",
-    "total_experience": "7 years",
-    "position_experience": "5 years",
-    "years_with_firm": "3 years",
+    "name": "Mohammedsultan Sulaiman",
+    "profession": "Structural Engineer",
+    "education": "BSc. in Civil Eng",
+    "total_experience": ">16 years",
+    "position_experience": ">9 years",
+    "years_with_firm": "≥4",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Antenhe Endashaw",
+    "profession": "Pavement/Material Engineer",
+    "education": "MSc. in Civil Eng",
+    "total_experience": ">17 years",
+    "position_experience": ">9 years",
+    "years_with_firm": "≥3",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Wubishet Dessalegne",
+    "profession": "Highway Engineer I",
+    "education": "MSc. in Transport & Road Eng",
+    "total_experience": ">29 years",
+    "position_experience": ">12 years",
+    "years_with_firm": "≥15",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Yenehe Assefa",
+    "profession": "Highway Engineer II",
+    "education": "MSc. in Transport & Road Eng",
+    "total_experience": ">31 years",
+    "position_experience": ">31 years",
+    "years_with_firm": "≥14",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Solomon Alemayehu",
+    "profession": "Quantity Surveyors",
+    "education": "MSc. in Civil Eng",
+    "total_experience": ">21 years",
+    "position_experience": ">11 years",
+    "years_with_firm": "≥6",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Mesfin Worku",
+    "profession": "Senior Surveyor",
+    "education": "MSc. in Civil Eng",
+    "total_experience": ">15 years",
+    "position_experience": ">12 years",
+    "years_with_firm": "≥3",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Muluken Getachew",
+    "profession": "Claim Expert/Contract Engineer",
+    "education": "MSc. in Civil Eng",
+    "total_experience": ">15 years",
+    "position_experience": ">4 years",
+    "years_with_firm": "≥13",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Mulugeta Demisse",
+    "profession": "Traffic Engineer/Transport Economist/Road Safety Expert",
+    "education": "MSc. in Highway Engineering",
+    "total_experience": ">45 years",
+    "position_experience": ">30 years",
+    "years_with_firm": "≥8",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Muzeyin Husen",
+    "profession": "Sociologist",
+    "education": "BSc. in Sociology",
+    "total_experience": ">6 years",
+    "position_experience": ">6 years",
+    "years_with_firm": "≥5",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Roman",
+    "profession": "Environmentalist",
+    "education": "BSc. in Water Supply & Environmental Engineering",
+    "total_experience": ">6 years",
+    "position_experience": ">6 years",
+    "years_with_firm": "≥1",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Ashenafi Sintayehu",
+    "profession": "Hydrologist/Hydraulic Engineer",
+    "education": "MSc. in Civil Engineering",
+    "total_experience": ">10 years",
+    "position_experience": ">4 years",
+    "years_with_firm": "≥",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Yodit Dessalegne",
+    "profession": "CAD Engineer",
+    "education": "Advance Diploma in Drafting Technician",
+    "total_experience": ">15 years",
+    "position_experience": "15 years",
+    "years_with_firm": "≥",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Kamil Mohammed",
+    "profession": "Project Coordinator",
+    "education": "BSc. in Civil Eng",
+    "total_experience": ">22 years",
+    "position_experience": ">9 years",
+    "years_with_firm": "≥14",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Rahel Geremew",
+    "profession": "Junior Staff I",
+    "education": "BSc. in Civil Eng",
+    "total_experience": ">5 years",
+    "position_experience": ">5 years",
+    "years_with_firm": "≥2",
+    "relation": "Permanent Staff"
+  },
+  {
+    "name": "Melat Feseha",
+    "profession": "Junior Staff II",
+    "education": "BSc. in CoTM",
+    "total_experience": ">5 years",
+    "position_experience": ">5 years",
+    "years_with_firm": "≥4",
     "relation": "Permanent Staff"
   }
 ]
