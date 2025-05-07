@@ -6,7 +6,12 @@
     <title>Hitcon Engineering - Excellence in Engineering Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/pageLoader.js"></script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/mobileMenu.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,16 +23,14 @@
                         light: '#f8fafc'
                     }
                 }
-            }
+            },
+            darkMode: 'class'
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
 </head>
-<body class="font-sans">
-   
-     <!-- TopNavbar -->
+<body class="font-sans bg-white dark:bg-gray-900">
+    <!-- TopNavbar -->
     <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
 
     <!-- Hero Section -->
@@ -54,6 +57,7 @@
         }"
         class="relative h-[600px] bg-cover bg-center transition-all duration-1000 ease-in-out"
         :style="`background-image: url(${images[activeIndex]})`"
+        aria-label="Hero banner with rotating background images"
     >
         <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
         <div class="container mx-auto px-4 h-full flex items-center relative z-10">
@@ -63,156 +67,228 @@
                     HITCON Engineering PLC is a consulting firm specializing in development, highways, transport, and bridges.
                     Registered with the Ministry of Works, Infrastructure, and MoFED, it operates from Sarbet Karl Square, Dokimas Building, 2nd floor.
                 </p>
-                <a href="/projects.html" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">
+                <a href="/projects.html" class="btn btn-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
                     EXPLORE OUR PROJECTS
                 </a>
             </div>
         </div>
     </section>
 
-
-     
-     <!-- Our Services -->
-     <div hx-get="components/servicesSection.html" hx-trigger="load"></div>
+    <!-- Our Services -->
+    <div hx-get="components/servicesSection.html" hx-trigger="load"></div>
 
     <!-- Team Stats Section -->
-    <section class="py-12 bg-white">
+    <section class="py-12 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-4">OUR TEAM</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <!-- Stat 1 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
                     <div class="text-4xl font-bold text-secondary mb-2">31+</div>
-                    <div class="text-lg font-medium text-primary">Engineers</div>
+                    <div class="text-lg font-medium text-primary dark:text-blue-300">Engineers</div>
                 </div>
                 
                 <!-- Stat 2 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
                     <div class="text-4xl font-bold text-secondary mb-2">20+</div>
-                    <div class="text-lg font-medium text-primary">Inspectors</div>
+                    <div class="text-lg font-medium text-primary dark:text-blue-300">Inspectors</div>
                 </div>
                 
                 <!-- Stat 3 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
                     <div class="text-4xl font-bold text-secondary mb-2">4</div>
-                    <div class="text-lg font-medium text-primary">Hydrologists</div>
+                    <div class="text-lg font-medium text-primary dark:text-blue-300">Hydrologists</div>
                 </div>
                 
                 <!-- Stat 4 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md">
                     <div class="text-4xl font-bold text-secondary mb-2">3+</div>
-                    <div class="text-lg font-medium text-primary">Environmentalists</div>
+                    <div class="text-lg font-medium text-primary dark:text-blue-300">Environmentalists</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="py-16 bg-gray-100" x-data="{ expanded: false }">
+    <section class="py-16 bg-gray-100 dark:bg-gray-900" x-data="{ expanded: false }">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <h2 class="text-3xl font-bold text-primary mb-4">INNOVATIVE ENGINEERING SOLUTIONS</h2>
+                    <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-4">INNOVATIVE ENGINEERING SOLUTIONS</h2>
                     <div class="w-24 h-1 bg-secondary mb-6"></div>
-                    <p class="text-gray-700 mb-4">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
                         HITCON Engineering is a premier multidisciplinary engineering firm with extensive experience in Structures, Transportation Infrastructure, Energy, Water Resources, and Environmental Engineering.
                     </p>
-                    <p class="text-gray-700 mb-4">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
                         Since our founding, we have been providing exceptional Architectural & Engineering Services and Development Consulting Services globally, implementing projects across Asia, the Middle East, Europe, Africa, and the Americas.
                     </p>
-                    <p class="text-gray-700 mb-6">
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
                         Our team of highly qualified professionals is committed to delivering innovative and sustainable solutions that exceed client expectations.
                     </p>
                     <template x-if="expanded">
-                        <p class="text-gray-700 mb-6 transition-all duration-300 ease-in-out">
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 transition-all duration-300 ease-in-out">
                             HITCON takes pride in adopting cutting-edge technologies, fostering collaborative partnerships, and staying ahead of the curve in a rapidly evolving global engineering landscape.
                         </p>
                     </template>
                     <button 
                         @click="expanded = !expanded"
-                        class="bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block"
+                        class="btn btn-primary"
                         x-text="expanded ? 'SHOW LESS' : 'LEARN MORE'"
+                        aria-expanded="expanded ? 'true' : 'false'"
                     ></button>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="/assets/pics/photo_1_2025-05-07_22-11-14.jpg" alt="About HITCON">
+                    <img 
+                        class="lazy-load rounded-lg shadow-lg"
+                        data-src="/assets/pics/photo_1_2025-05-07_22-11-14.jpg" 
+                        alt="HITCON Engineering team working on a project" 
+                        loading="lazy"
+                    >
                 </div>
             </div>
         </div>
     </section>
 
-
-
-  
     <!-- Projects Showcase -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-primary mb-4">FEATURED PROJECTS</h2>
-        <div class="w-24 h-1 bg-secondary mx-auto"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-4">FEATURED PROJECTS</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{
+                hoverIndex: null
+            }">
   
-        <!-- Project 1 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg">
-          <img src="/assets/pics/photo_3_2025-05-07_22-11-14.jpg" alt="Project 1" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Road Safety Works: Adigrat, Combolcha & Alemgena</h3>
-            <p class="text-gray-200">Construction Supervision Services</p>
-          </div>
-          <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <a href="projects.html" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
-          </div>
-        </div>
+                <!-- Project 1 -->
+                <div 
+                    class="group relative overflow-hidden rounded-lg shadow-lg" 
+                    @mouseenter="hoverIndex = 0" 
+                    @mouseleave="hoverIndex = null"
+                    @focus="hoverIndex = 0"
+                    @blur="hoverIndex = null"
+                    tabindex="0"
+                >
+                    <img 
+                        class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-src="/assets/pics/photo_3_2025-05-07_22-11-14.jpg" 
+                        alt="Road Safety Works project in Adigrat, Combolcha & Alemgena" 
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Road Safety Works: Adigrat, Combolcha & Alemgena</h3>
+                        <p class="text-gray-200">Construction Supervision Services</p>
+                    </div>
+                    <div 
+                        class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center transition-opacity duration-300"
+                        :class="hoverIndex === 0 ? 'opacity-100' : 'opacity-0'"
+                    >
+                        <a 
+                            href="projects.html" 
+                            class="btn btn-secondary"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
   
-        <!-- Project 2 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg">
-          <img src="/assets/pics/photo_6_2025-05-07_22-11-14.jpg" alt="Project 2" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Koshe – Mito – Werabe Design & Build Supervision</h3>
-            <p class="text-gray-200">Construction Supervision Services</p>
-          </div>
-          <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <a href="projects.html" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
-          </div>
-        </div>
+                <!-- Project 2 -->
+                <div 
+                    class="group relative overflow-hidden rounded-lg shadow-lg" 
+                    @mouseenter="hoverIndex = 1" 
+                    @mouseleave="hoverIndex = null"
+                    @focus="hoverIndex = 1"
+                    @blur="hoverIndex = null"
+                    tabindex="0"
+                >
+                    <img 
+                        class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-src="/assets/pics/photo_6_2025-05-07_22-11-14.jpg" 
+                        alt="Koshe – Mito – Werabe Design & Build Supervision project" 
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Koshe – Mito – Werabe Design & Build Supervision</h3>
+                        <p class="text-gray-200">Construction Supervision Services</p>
+                    </div>
+                    <div 
+                        class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center transition-opacity duration-300"
+                        :class="hoverIndex === 1 ? 'opacity-100' : 'opacity-0'"
+                    >
+                        <a 
+                            href="projects.html" 
+                            class="btn btn-secondary"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
   
-        <!-- Project 3 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg">
-          <img src="/assets/pics/photo_9_2025-05-07_22-11-14.jpg" alt="Project 3" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Road Management Support: Adigrat & Gonder</h3>
-            <p class="text-gray-200">Technical Assistance Services</p>
-          </div>
-          <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <a href="projects.html" class="bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors">View Project</a>
-          </div>
-        </div>
+                <!-- Project 3 -->
+                <div 
+                    class="group relative overflow-hidden rounded-lg shadow-lg" 
+                    @mouseenter="hoverIndex = 2" 
+                    @mouseleave="hoverIndex = null"
+                    @focus="hoverIndex = 2"
+                    @blur="hoverIndex = null"
+                    tabindex="0"
+                >
+                    <img 
+                        class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-src="/assets/pics/photo_9_2025-05-07_22-11-14.jpg" 
+                        alt="Road Management Support project in Adigrat & Gonder" 
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Road Management Support: Adigrat & Gonder</h3>
+                        <p class="text-gray-200">Technical Assistance Services</p>
+                    </div>
+                    <div 
+                        class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center transition-opacity duration-300"
+                        :class="hoverIndex === 2 ? 'opacity-100' : 'opacity-0'"
+                    >
+                        <a 
+                            href="projects.html" 
+                            class="btn btn-secondary"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
   
-      </div>
-  
-      <div class="text-center mt-12">
-        <a href="projects.html" class="bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">VIEW ALL PROJECTS</a>
-      </div>
-    </div>
-  </section>
-  
-
-
-
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">READY TO WORK WITH US?</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Let's discuss how HITCON Engineering can help bring your project to life with our innovative engineering solutions.</p>
-            <a href="#contact" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md transition-colors inline-block">CONTACT US TODAY</a>
+            <div class="text-center mt-12">
+                <a 
+                    href="projects.html" 
+                    class="btn btn-primary"
+                >
+                    VIEW ALL PROJECTS
+                </a>
+            </div>
         </div>
     </section>
 
-     <!-- Footer Section -->
-     <div hx-get="components/footer.html" hx-trigger="load"></div>
+    <!-- Call to Action -->
+    <section class="py-20 bg-primary dark:bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">READY TO WORK WITH US?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Let's discuss how HITCON Engineering can help bring your project to life with our innovative engineering solutions.</p>
+            <a 
+                href="#contact" 
+                class="btn btn-secondary"
+            >
+                CONTACT US TODAY
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div hx-get="components/footer.html" hx-trigger="load"></div>
 </body>
 </html>

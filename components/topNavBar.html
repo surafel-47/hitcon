@@ -1,37 +1,117 @@
 <html>
         <!-- Top Social Bar -->
-        <div class="bg-primary py-2">
+        <div class="bg-primary dark:bg-blue-900 py-2">
             <div class="container mx-auto flex justify-end px-4">
                 <div class="flex space-x-4">
-                    <a href="#" class="text-white hover:text-secondary transition-colors"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white hover:text-secondary transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-white hover:text-secondary transition-colors"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white hover:text-secondary transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     
         <!-- Navigation -->
-        <nav class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40" x-data="mobileMenuData()">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center py-4">
                     <div class="flex items-center">
                         <a href="/index.html" class="flex items-center">
-                            <span class="text-2xl font-bold text-primary">HITCON</span>
+                            <span class="text-2xl font-bold text-primary dark:text-blue-300">HITCON</span>
                             <span class="text-2xl font-light text-secondary">ENGINEERING</span>
                         </a>
                     </div>
+                    
+                    <!-- Desktop Navigation -->
                     <div class="hidden md:flex space-x-8">
-                        <a href="index.html" class="text-primary hover:text-secondary font-medium transition-colors">HOME</a>
-                        <a href="about.html" class="text-primary hover:text-secondary font-medium transition-colors">ABOUT US</a>
-                        <a href="about.html#ourexpertise" class="text-primary hover:text-secondary font-medium transition-colors">SERVICES</a>
-                        <a href="projects.html" class="text-primary hover:text-secondary font-medium transition-colors">PROJECTS</a>
-                        <a href="#contact" class="text-primary hover:text-secondary font-medium transition-colors">CONTACT</a>
+                        <a href="index.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors">HOME</a>
+                        <a href="about.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors">ABOUT US</a>
+                        <a href="about.html#ourexpertise" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors">SERVICES</a>
+                        <a href="projects.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors">PROJECTS</a>
+                        <a href="#contact" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors">CONTACT</a>
                     </div>
-                    <div class="md:hidden">
-                        <button class="text-primary focus:outline-none">
-                            <i class="fas fa-bars text-2xl"></i>
+                    
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <div class="hidden md:block">
+                        <button 
+                            @click="$store.toggleDarkMode()" 
+                            class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white transition-colors"
+                            aria-label="Toggle dark mode"
+                        >
+                            <i class="fas" :class="$store.darkMode ? 'fa-sun' : 'fa-moon'"></i>
                         </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <div class="md:hidden flex items-center">
+                        <button 
+                            id="mobile-menu-toggle"
+                            @click="toggle()" 
+                            class="text-primary dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-secondary rounded p-2"
+                            aria-label="Toggle mobile menu"
+                            aria-expanded="isOpen"
+                        >
+                            <i class="fas" :class="isOpen ? 'fa-times' : 'fa-bars'"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Overlay -->
+            <div 
+                class="mobile-menu-overlay" 
+                :class="isOpen ? 'open' : ''" 
+                @click="close()"
+                aria-hidden="true"
+            ></div>
+            
+            <!-- Mobile Menu -->
+            <div 
+                id="mobile-menu"
+                class="mobile-menu"
+                :class="isOpen ? 'open' : ''"
+                aria-label="Mobile navigation"
+            >
+                <div class="flex flex-col space-y-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xl font-bold text-primary dark:text-blue-300">MENU</span>
+                        <button 
+                            @click="close()" 
+                            class="text-primary dark:text-gray-200 hover:text-secondary p-2 rounded-full"
+                            aria-label="Close mobile menu"
+                        >
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors py-2 border-b border-gray-100 dark:border-gray-700" @click="close()">HOME</a>
+                        <a href="about.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors py-2 border-b border-gray-100 dark:border-gray-700" @click="close()">ABOUT US</a>
+                        <a href="about.html#ourexpertise" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors py-2 border-b border-gray-100 dark:border-gray-700" @click="close()">SERVICES</a>
+                        <a href="projects.html" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors py-2 border-b border-gray-100 dark:border-gray-700" @click="close()">PROJECTS</a>
+                        <a href="#contact" class="text-primary dark:text-gray-200 hover:text-secondary dark:hover:text-secondary font-medium transition-colors py-2 border-b border-gray-100 dark:border-gray-700" @click="close()">CONTACT</a>
+                    </div>
+                    
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                        <button 
+                            @click="$store.toggleDarkMode()" 
+                            class="flex items-center w-full py-2 text-left text-primary dark:text-gray-200"
+                            aria-label="Toggle dark mode"
+                        >
+                            <i class="fas" :class="$store.darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                            <span class="ml-3" x-text="$store.darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'"></span>
+                        </button>
+                    </div>
+                    
+                    <!-- Social Media Links (Mobile) -->
+                    <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                        <div class="flex space-x-6 pt-2">
+                            <a href="#" class="text-primary dark:text-gray-200 hover:text-secondary" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-primary dark:text-gray-200 hover:text-secondary" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-primary dark:text-gray-200 hover:text-secondary" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-primary dark:text-gray-200 hover:text-secondary" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

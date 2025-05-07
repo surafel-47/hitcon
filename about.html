@@ -8,6 +8,11 @@
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/pageLoader.js"></script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/mobileMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -20,61 +25,132 @@
                         light: '#f8fafc'
                     }
                 }
-            }
+            },
+            darkMode: 'class'
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="font-sans">
-     
-     <!-- TopNavbar -->
-     <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
+<body class="font-sans bg-white dark:bg-gray-900">
+    <!-- TopNavbar -->
+    <div hx-get="components/topNavBar.html" hx-trigger="load"></div>
     
-     <!-- Page Header with Slideshow -->
+    <!-- Page Header with Parallax Effect -->
     <section 
-        x-data="{
-            images: [
-                '/assets/pics/photo_1_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_2_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_3_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_4_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_5_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_6_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_7_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_9_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_10_2025-05-07_22-11-14.jpg',
-                '/assets/pics/photo_11_2025-05-07_22-11-14.jpg',
-            ],
-            currentIndex: 0,
-            init() {
-                setInterval(() => {
-                    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                }, 5000); // change every 5 seconds
-            }
-        }"
-        x-init="init"
-        class="relative h-[300px] bg-cover bg-center transition-all duration-1000 ease-in-out"
-        :style="'background-image: url(' + images[currentIndex] + ')'"
+        class="relative h-[400px] bg-cover bg-center"
+        style="background-image: url('/assets/pics/photo_1_2025-05-07_22-11-14.jpg')"
     >
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">ABOUT HITCON ENGINEERING</h1>
-                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="mb-6 inline-block">
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 inline-block relative">
+                        ABOUT HITCON
+                        <div class="absolute -bottom-3 left-0 w-full h-1 bg-secondary"></div>
+                    </h1>
+                </div>
+                <p class="text-xl text-white max-w-2xl mx-auto leading-relaxed">
+                    A premier engineering consultancy delivering exceptional solutions for transportation and infrastructure projects across Ethiopia and beyond.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center backdrop-blur-sm">
+                <i class="fas fa-chevron-down text-white"></i>
             </div>
         </div>
     </section>
 
-    <!-- Company Overview -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+    <!-- About HITCON Highlight Section -->
+    <section class="py-16 bg-white dark:bg-gray-800 overflow-hidden relative">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full translate-y-1/3 -translate-x-1/4"></div>
+        
+        <div class="container mx-auto px-4 relative">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-primary mb-6">About HITCON Engineering PLC</h2>
-                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                    HITCON Engineering PLC specializes in highway, transport, and bridge consulting, offering a full range of services for road and infrastructure projects. Registered with the Ministry of Works, Infrastructure, and MoFED, the company provides expert solutions in engineering design, project management, and contract supervision.
-                </p>
-                <div class="flex justify-center max=h-[500px] overflow-hidden rounded-lg shadow-lg mb-8">
-                    <img src="/assets/pics/photo_7_2025-05-07_22-11-14.jpg">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-6/12 order-2 md:order-1">
+                        <div class="mb-6">
+                            <span class="px-4 py-1 bg-secondary/10 text-secondary font-semibold rounded-full text-sm">Est. 2008</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-6">About HITCON Engineering PLC</h2>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                            HITCON Engineering PLC specializes in highway, transport, and bridge consulting, offering a full range of services for road and infrastructure projects. Registered with the Ministry of Works, Infrastructure, and MoFED, the company provides expert solutions in engineering design, project management, and contract supervision.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary dark:text-blue-300">Excellence</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Committed to delivering high-quality solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-lightbulb text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary dark:text-blue-300">Innovation</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Embracing new technologies and methods</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-handshake text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary dark:text-blue-300">Partnership</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Building lasting relationships with clients</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-leaf text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary dark:text-blue-300">Sustainability</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Creating solutions with lasting positive impact</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-6/12 order-1 md:order-2 relative">
+                        <div class="relative">
+                            <!-- Main Image -->
+                            <div class="rounded-lg overflow-hidden shadow-xl z-10 relative">
+                                <img src="/assets/pics/photo_4_2025-05-07_22-11-14.jpg" alt="HITCON Engineering project" class="w-full h-auto">
+                            </div>
+                            
+                            <!-- Decorative Elements -->
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-secondary rounded-lg z-0"></div>
+                            <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-lg z-0"></div>
+                            
+                            <!-- Stats -->
+                            <div class="absolute -bottom-8 left-8 bg-white dark:bg-gray-700 px-6 py-4 rounded-lg shadow-lg z-20">
+                                <div class="flex items-center gap-6">
+                                    <div class="text-center">
+                                        <span class="text-2xl font-bold text-secondary block">15+</span>
+                                        <span class="text-xs text-gray-600 dark:text-gray-300">Years</span>
+                                    </div>
+                                    <div class="w-px h-10 bg-gray-200 dark:bg-gray-600"></div>
+                                    <div class="text-center">
+                                        <span class="text-2xl font-bold text-secondary block">50+</span>
+                                        <span class="text-xs text-gray-600 dark:text-gray-300">Staff</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,93 +230,225 @@
                 <h2 class="text-3xl font-bold text-primary mb-4 text-center">COMPANY PROFILE</h2>
                 <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        The Company's main objective is to provide framed Engineering solutions to civil work projects to be carried out in the country and abroad.
-                    </p>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" x-data="{ activeSection: 'overview' }">
+                    <!-- Profile Navigation -->
+                    <div class="bg-primary text-white flex flex-wrap">
+                        <button 
+                            @click="activeSection = 'overview'" 
+                            :class="activeSection === 'overview' ? 'bg-secondary text-white' : 'hover:bg-primary-dark'"
+                            class="py-3 px-5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-inset"
+                        >
+                            <i class="fas fa-building mr-2"></i>Overview
+                        </button>
+                        <button 
+                            @click="activeSection = 'expertise'" 
+                            :class="activeSection === 'expertise' ? 'bg-secondary text-white' : 'hover:bg-primary-dark'"
+                            class="py-3 px-5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-inset"
+                        >
+                            <i class="fas fa-lightbulb mr-2"></i>Expertise
+                        </button>
+                        <button 
+                            @click="activeSection = 'approach'" 
+                            :class="activeSection === 'approach' ? 'bg-secondary text-white' : 'hover:bg-primary-dark'"
+                            class="py-3 px-5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-inset"
+                        >
+                            <i class="fas fa-compass mr-2"></i>Approach
+                        </button>
+                        <button 
+                            @click="activeSection = 'team'" 
+                            :class="activeSection === 'team' ? 'bg-secondary text-white' : 'hover:bg-primary-dark'"
+                            class="py-3 px-5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-inset"
+                        >
+                            <i class="fas fa-users mr-2"></i>Our Team
+                        </button>
+                    </div>
                     
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        HITCON Engineering PLC is specializing in engineering management consulting, studies, design, contract administration and supervision of road and similar development projects. It is established to offer a wide range of civil, structural, environmental and management services through the complete project life cycle of road (transportation), water and infrastructure development projects.
-                    </p>
+                    <!-- Overview Content -->
+                    <div x-show="activeSection === 'overview'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform -translate-x-2" x-transition:enter-end="opacity-100 transform translate-x-0" class="p-8">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2">
+                                <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                                    <span class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-info text-white text-sm"></i>
+                                    </span>
+                                    Company Overview
+                                </h3>
+                                <p class="text-gray-700 mb-4 leading-relaxed">
+                                    HITCON Engineering PLC is a multidisciplinary consulting firm established to deliver comprehensive civil engineering solutions for infrastructure projects both within Ethiopia and internationally.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed">
+                                    The firm specializes in engineering management consulting, including feasibility studies, detailed design, contract administration, and supervision of road and infrastructure development projects.
+                                </p>
+                                
+                                <div class="mt-6 flex gap-4">
+                                    <div class="bg-gray-50 rounded-lg p-4 text-center flex-1">
+                                        <span class="text-secondary text-2xl font-bold block">15+</span>
+                                        <span class="text-gray-600 text-sm">Years Experience</span>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4 text-center flex-1">
+                                        <span class="text-secondary text-2xl font-bold block">200+</span>
+                                        <span class="text-gray-600 text-sm">Projects Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2">
+                                <img src="/assets/pics/photo_7_2025-05-07_22-11-14.jpg" alt="HITCON Engineering office" class="rounded-lg shadow-md w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Hitcon Engineering PLC, over the recent years, evaluate the gap in the market on special services like Asset Management and Impact Assessment, that are related to roads.
-                    </p>
+                    <!-- Expertise Content -->
+                    <div x-show="activeSection === 'expertise'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform -translate-x-2" x-transition:enter-end="opacity-100 transform translate-x-0" class="p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                            <span class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-cogs text-white text-sm"></i>
+                            </span>
+                            Our Expertise
+                        </h3>
+                        <p class="text-gray-700 mb-6">
+                            Our expertise spans across multiple engineering disciplines, enabling us to deliver comprehensive solutions:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-road text-white"></i>
+                                    </div>
+                                    <h4 class="font-bold text-primary">Civil Engineering</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Specializing in transportation infrastructure, including highways, roads, bridges, and related structures.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-drafting-compass text-white"></i>
+                                    </div>
+                                    <h4 class="font-bold text-primary">Structural Engineering</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Design and analysis of structural systems for bridges, culverts, and other infrastructure.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-leaf text-white"></i>
+                                    </div>
+                                    <h4 class="font-bold text-primary">Environmental Engineering</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Environmental impact assessments and sustainable infrastructure solutions.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-tasks text-white"></i>
+                                    </div>
+                                    <h4 class="font-bold text-primary">Project Management</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm">
+                                    Comprehensive management services from project inception through completion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        The potential of HITCON ENGINEERING PLC is built on its staff, with extensive professional experience gained prior to the formation of HITCON ENGINEERING PLC.
-                    </p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-primary mb-4">Our Services</h3>
+                    <!-- Approach Content -->
+                    <div x-show="activeSection === 'approach'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform -translate-x-2" x-transition:enter-end="opacity-100 transform translate-x-0" class="p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                            <span class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-compass text-white text-sm"></i>
+                            </span>
+                            Our Approach
+                        </h3>
+                        <p class="text-gray-700 mb-6">
+                            HITCON Engineering PLC has expanded into specialized services such as Asset Management and Road Impact Assessment—key areas often overlooked in traditional road development initiatives.
+                        </p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-primary mb-6">
+                            <h4 class="font-bold text-primary mb-3">Our Methodology</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                                    <span class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-2">1</span>
+                                    <span class="text-gray-700">Assessment</span>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                                    <span class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-2">2</span>
+                                    <span class="text-gray-700">Planning</span>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                                    <span class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-2">3</span>
+                                    <span class="text-gray-700">Design</span>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                                    <span class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-2">4</span>
+                                    <span class="text-gray-700">Implementation</span>
+                                </div>
+                                <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                                    <span class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-2">5</span>
+                                    <span class="text-gray-700">Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            Our approach combines technical excellence with innovative thinking to deliver sustainable solutions that meet the unique requirements of each project.
+                        </p>
+                    </div>
                     
-                    <p class="text-gray-700 mb-4">
-                        Among the services that HITCON Engineering PLC provides in the sector of Road projects, the following are some of them:
-                    </p>
-                    
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Pre-feasibility and feasibility studies</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Project preparation, Appraisal and evaluation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Road network studies</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Environmental Impact Assessment studies</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Topographic survey</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Subsurface foundation investigation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Soil surveys and pavement condition investigation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Hydraulics and Structures Investigations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Preparation of Detailed Engineering design, Drawing and Tender documents for Roads and Bridges</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Supervision of Roads and bridges maintenance/rehabilitation/upgrading and construction works</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Contract Management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-circle text-secondary text-xs mt-1.5 mr-2"></i>
-                            <span>Road and Bridge condition surveys and detail analysis to define a deterioration model and forecast future need for investment to enhance Road and Bridge conditions using special tools and software such as HDM4.</span>
-                        </li>
-                    </ul>
-                    
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        It is known that the quality of the services to be provided by the firm is highly dependent on the competence of the staff. HITCON Engineering PLC is thus keeping hold of qualified personnel on each field, i.e. Resident Engineer, Highway Engineer, Structural Engineer, Hydrologist, Geotechnical Engineer, Material Engineer, Contract Engineer, Transport Economist, Environmentalist and Technicians.
-                    </p>
-                    
-                    <p class="text-gray-700 leading-relaxed">
-                        All the staff being professionals in diverse disciplines and highly dedicated to the promotion of high-quality performance and efficiency by their determined believes to satisfy the clients on projects undertaken.
-                    </p>
-                    
-                    <p class="text-gray-700 leading-relaxed">
-                        HITCON ENGINEERING PLC has the following professionals to undertake different assignments. Moreover, on call-on basis HITCON ENGINEERING PLC can manage to arrange for more professional who offer services to the company on freelance basis.
-                    </p>
+                    <!-- Team Content -->
+                    <div x-show="activeSection === 'team'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform -translate-x-2" x-transition:enter-end="opacity-100 transform translate-x-0" class="p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                            <span class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-users text-white text-sm"></i>
+                            </span>
+                            Our Team
+                        </h3>
+                        <p class="text-gray-700 mb-6">
+                            The strength of HITCON lies in its highly qualified team, whose extensive professional experience predates the company's establishment and ensures the delivery of high-quality, technically sound, and sustainable engineering solutions.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary rounded-full mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-user-hard-hat text-white text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-primary">31+</h5>
+                                <p class="text-sm text-gray-600">Engineers</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary rounded-full mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-clipboard-check text-white text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-primary">20+</h5>
+                                <p class="text-sm text-gray-600">Inspectors</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary rounded-full mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-water text-white text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-primary">4</h5>
+                                <p class="text-sm text-gray-600">Hydrologists</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary rounded-full mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-leaf text-white text-xl"></i>
+                                </div>
+                                <h5 class="font-bold text-primary">3+</h5>
+                                <p class="text-sm text-gray-600">Environmentalists</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -441,7 +649,7 @@
         </div>
     </section>
     <!-- Staff Table Section -->
-    <section class="py-16 bg-white">
+    <!-- <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-3xl font-bold text-primary mb-6 text-center">Our Team</h2>
@@ -479,8 +687,47 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
      <!-- Footer Section -->
      <div hx-get="components/footer.html" hx-trigger="load"></div>
+
+    <script>
+        // Check for saved dark mode preference
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('theme', {
+                dark: localStorage.getItem('darkMode') === 'true',
+                toggle() {
+                    this.dark = !this.dark;
+                    localStorage.setItem('darkMode', this.dark);
+                }
+            });
+            
+            // Initialize dark mode from localStorage
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('html').classList.add('dark');
+                Alpine.store('darkMode', true);
+            }
+        });
+        
+        // Add lazy loading for images
+        document.addEventListener('DOMContentLoaded', () => {
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

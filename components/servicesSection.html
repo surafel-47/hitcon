@@ -1,85 +1,244 @@
 <html>
-        <!-- Services Section -->
-        <section id="services" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-primary mb-4">OUR SERVICES</h2>
-                    <div class="w-24 h-1 bg-secondary mx-auto"></div>
-                </div>
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800" x-data="{ isVisible: false }" x-init="setTimeout(() => isVisible = true, 300)">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-4">OUR SERVICES</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+                    HITCON Engineering PLC delivers comprehensive services across the entire infrastructure lifecycle, from planning and design to project management and supervision.
+                </p>
+            </div>
+            
+            <div class="max-w-7xl mx-auto"
+                x-intersect="isVisible = true"
+                :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
+                class="transition-all duration-1000 ease-out">
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-search text-white text-2xl"></i>
+                    <!-- Service Card 1 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <h3 class="service-title">Feasibility Studies & Design</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Pre-feasibility and Feasibility Studies</li>
+                                    <li>Road Network Studies</li>
+                                    <li>Topographic Survey & Mapping</li>
+                                    <li>Detailed Engineering Design</li>
+                                    <li>Traffic Analysis & Forecasting</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Pre-feasibility and feasibility studies</h3>
-                        <p class="text-gray-600">Conducting thorough studies to assess project feasibility and identify optimal solutions.</p>
                     </div>
                     
-                    <!-- Service 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-tasks text-white text-2xl"></i>
+                    <!-- Service Card 2 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h3 class="service-title">Construction Supervision</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Quality Control of Materials & Works</li>
+                                    <li>Construction Management & Monitoring</li>
+                                    <li>Contract Administration</li>
+                                    <li>Progress & Financial Control</li>
+                                    <li>Design Review & Value Engineering</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Project preparation, Appraisal and evaluation</h3>
-                        <p class="text-gray-600">Comprehensive support from project preparation to evaluation, ensuring success at every stage.</p>
                     </div>
                     
-                    <!-- Service 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-road text-white text-2xl"></i>
+                    <!-- Service Card 3 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-bridge"></i>
+                            </div>
+                            <h3 class="service-title">Bridge & Structural Engineering</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Bridge Design & Analysis</li>
+                                    <li>Structural Assessment & Evaluation</li>
+                                    <li>Hydraulic & Geotechnical Investigation</li>
+                                    <li>Condition Surveys of Existing Bridges</li>
+                                    <li>Bridge Maintenance Planning</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Road network studies</h3>
-                        <p class="text-gray-600">Optimizing traffic flow and enhancing safety through detailed road network analysis.</p>
                     </div>
                     
-                    <!-- Service 4 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-tree text-white text-2xl"></i>
+                    <!-- Service Card 4 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3 class="service-title">Asset Management</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Road & Bridge Condition Surveys</li>
+                                    <li>Asset Inventory & Database Management</li>
+                                    <li>Maintenance Strategy Development</li>
+                                    <li>Performance Monitoring Systems</li>
+                                    <li>Road Maintenance Action Plans</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Environmental Impact Assessment studies</h3>
-                        <p class="text-gray-600">Assessing environmental effects to ensure compliance and promote sustainability.</p>
                     </div>
                     
-                    <!-- Service 5 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-mountain text-white text-2xl"></i>
+                    <!-- Service Card 5 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h3 class="service-title">Environmental Engineering</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Environmental Impact Assessment</li>
+                                    <li>Mitigation & Management Plans</li>
+                                    <li>Social Impact Studies</li>
+                                    <li>Sustainable Design Solutions</li>
+                                    <li>Environmental Compliance Monitoring</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Topographic survey</h3>
-                        <p class="text-gray-600">Capturing detailed terrain data for informed project planning and design.</p>
                     </div>
                     
-                    <!-- Service 6 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-layer-group text-white text-2xl"></i>
+                    <!-- Service Card 6 -->
+                    <div 
+                        class="service-card group" 
+                        x-data="{ showDetails: false }"
+                        tabindex="0"
+                    >
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-title">Transport Planning & Economics</h3>
+                            <div 
+                                class="service-description"
+                                x-show="showDetails" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-4"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                            >
+                                <ul class="service-list">
+                                    <li>Transport Master Planning</li>
+                                    <li>Economic Feasibility Analysis</li>
+                                    <li>Traffic Impact Studies</li>
+                                    <li>URRAP Impact Assessment</li>
+                                    <li>Cost-Benefit Analysis</li>
+                                </ul>
+                            </div>
+                            <button 
+                                @click="showDetails = !showDetails" 
+                                class="service-button"
+                                :class="showDetails ? 'expanded' : ''"
+                            >
+                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
+                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Subsurface foundation investigation</h3>
-                        <p class="text-gray-600">Assessing soil composition and recommending foundation solutions for stability.</p>
-                    </div>
-                    
-                    <!-- Service 7 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-microscope text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Soil surveys and pavement condition investigation</h3>
-                        <p class="text-gray-600">Identifying areas for improvement and enhancing roadway performance.</p>
-                    </div>
-                    
-                    <!-- Service 8 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-water text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-4">Hydraulics and Structures Investigations</h3>
-                        <p class="text-gray-600">Detailed analysis of hydraulic systems and structural components for safety and durability.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    
+        </div>
+    </section>
 </html>
