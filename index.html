@@ -83,11 +83,7 @@
                 });
 
                 setInterval(() => {
-                    this.isTransitioning = true;
-                    setTimeout(() => {
-                        this.activeIndex = (this.activeIndex + 1) % this.images.length;
-                        this.isTransitioning = false;
-                    }, 500);
+                    this.activeIndex = (this.activeIndex + 1) % this.images.length;
                 }, 6000);
             }
         }"
@@ -103,8 +99,7 @@
         <img 
             :src="images[activeIndex].url"
             :alt="images[activeIndex].title"
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-            :class="{'opacity-0': isTransitioning, 'opacity-100': !isTransitioning}"
+            class="absolute inset-0 w-full h-full object-cover"
         >
 
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 transition-opacity z-10"></div>
