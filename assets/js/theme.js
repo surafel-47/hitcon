@@ -1,27 +1,19 @@
 // Theme management for consistent dark mode across pages
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize theme based on localStorage or system preference
+    // Initialize theme based on localStorage only - default to light
     const initializeTheme = () => {
         // Check localStorage first
         const savedTheme = localStorage.getItem('darkMode');
         
-        if (savedTheme !== null) {
-            // Use saved preference
-            if (savedTheme === 'true') {
-                document.documentElement.classList.add('dark');
-                window.Alpine && Alpine.store('darkMode', true);
-            } else {
-                document.documentElement.classList.remove('dark');
-                window.Alpine && Alpine.store('darkMode', false);
-            }
+        if (savedTheme === 'true') {
+            // Only enable dark mode if explicitly set to true
+            document.documentElement.classList.add('dark');
+            window.Alpine && Alpine.store('darkMode', true);
         } else {
-            // Check system preference if no saved preference
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (prefersDark) {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('darkMode', 'true');
-                window.Alpine && Alpine.store('darkMode', true);
-            }
+            // Default to light mode in all other cases
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', 'false');
+            window.Alpine && Alpine.store('darkMode', false);
         }
     };
 
