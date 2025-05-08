@@ -146,8 +146,8 @@
                 >
                     <div class="h-48 overflow-hidden">
                         <img 
-                            x-init="initLazyLoad($el, project.imageIndex || (index % imageCount))"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 lazy-image"
+                            :src="getImageUrl(index, project)"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                             :alt="`Project image: ${project.projectName}`"
                             loading="lazy"
                         >
@@ -255,7 +255,7 @@
                     
                     <div class="h-64 overflow-hidden">
                         <img 
-                            :src="getImageUrl(state.selectedProject?.imageIndex || 0)" 
+                            :src="getImageUrl(state.selectedProject?.imageIndex || 0, state.selectedProject)" 
                             :alt="state.selectedProject?.projectName + ' featured image'"
                             class="w-full h-full object-cover"
                         >
@@ -404,16 +404,25 @@
                     totalPages: 1
                 },
                 imagePool: [
-                    'assets/pics/photo_1_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_2_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_3_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_4_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_5_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_6_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_7_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_9_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_10_2025-05-07_22-11-14.jpg',
-                    'assets/pics/photo_11_2025-05-07_22-11-14.jpg'
+                    'assets/pics/road nice .jpg',
+                    'assets/pics/machine and road nice 2.jpg',
+                    'assets/pics/machine and road nice 1.jpg',
+                    'assets/pics/machine and road nice.jpg',
+                    'assets/pics/machine average 1.jpg',
+                    'assets/pics/machine average.jpg',
+                    'assets/pics/meeting average.jpg',
+                    'assets/pics/machine nice.jpg',
+                    'assets/pics/road awful.jpg',
+                    'assets/pics/machine nice 1.jpg',
+                    'assets/pics/road machine and meeting.jpg',
+                    'assets/pics/meeting nicer.jpg'
+                ],
+                
+                // Bridge-specific images with descriptive comments
+                bridgeImages: [
+                    'assets/pics/bridge nice.jpg',     // Main bridge image
+                    'assets/pics/bridge nice 1.jpg',   // Secondary bridge image
+                    'assets/pics/meeting nicer.jpg'    // Bridge project planning/meeting
                 ],
                 
                 init() {
@@ -440,7 +449,7 @@
                                 if (entry.isIntersecting) {
                                     const img = entry.target;
                                     const index = img.dataset.imageIndex;
-                                    img.src = this.getImageUrl(index);
+                                    img.src = this.getImageUrl(index, this.state.projects.find(p => p.imageIndex === index));
                                     img.classList.add('loaded');
                                     this.lazyLoadObserver.unobserve(img);
                                 }
@@ -449,13 +458,15 @@
                     }
                 },
 
-                initLazyLoad(el, index) {
+                initLazyLoad(el, index, project) {
                     if (this.lazyLoadObserver) {
                         el.dataset.imageIndex = index;
+                        // Use getImageUrl with the project directly
+                        el.src = this.getImageUrl(index, project);
                         this.lazyLoadObserver.observe(el);
                     } else {
                         // Fallback for browsers without IntersectionObserver
-                        el.src = this.getImageUrl(index);
+                        el.src = this.getImageUrl(index, project);
                         setTimeout(() => {
                             el.classList.add('loaded');
                         }, 100);
@@ -494,7 +505,27 @@
                     }
                 },
 
-                getImageUrl(index) {
+                getImageUrl(index, project) {
+                    // Enhanced bridge project detection with more specific checks
+                    const isBridgeProject = project && (
+                        // Check project name - must contain 'bridge' specifically
+                        (project.projectName?.toLowerCase().includes('bridge')) ||
+                        // Check specific services - must contain 'bridge' specifically
+                        (project.specificServicesRendered?.some(service => 
+                            service.toLowerCase().includes('bridge')
+                        ))
+                    );
+                    
+                    // Log for debugging
+                    console.log('Project:', project?.projectName, 'Is Bridge:', isBridgeProject);
+                    
+                    if (isBridgeProject) {
+                        // Use bridge-specific images with a more deterministic selection
+                        const bridgeIndex = Math.abs(project.projectName.length + index) % this.bridgeImages.length;
+                        return this.bridgeImages[bridgeIndex];
+                    }
+                    
+                    // Use regular image pool for non-bridge projects
                     return this.imagePool[index % this.imagePool.length];
                 },
 

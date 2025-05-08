@@ -37,40 +37,109 @@
     <section 
         x-data="{
             images: [
-                'assets/pics/photo_1_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_2_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_3_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_4_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_5_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_6_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_7_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_9_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_10_2025-05-07_22-11-14.jpg',
-                'assets/pics/photo_11_2025-05-07_22-11-14.jpg',
+                {
+                    url: 'assets/pics/machine nice.jpg',
+                    title: 'HITCON ENGINEERING',
+                    description: 'HITCON Engineering PLC is a consulting firm specializing in development, highways, transport, and bridges. Registered with the Ministry of Works, Infrastructure, and MoFED, it operates from Sarbet Karl Square, Dokimas Building, 2nd floor.'
+                },
+
+                {
+                    url: 'assets/pics/machine and road nice 1.jpg',
+                    title: 'Infrastructure Development',
+                    description: 'Comprehensive engineering solutions for Ethiopia\'s infrastructure, from concept to completion.'
+                },
+                {
+                    url: 'assets/pics/road nice .jpg',
+                    title: 'Highway Engineering',
+                    description: 'Expert highway design and construction management, ensuring safe and efficient transportation networks.'
+                },
+                {
+                    url: 'assets/pics/bridge nice.jpg',
+                    title: 'Bridge Engineering Excellence',
+                    description: 'Specialized in bridge design and construction supervision, delivering innovative solutions for Ethiopia\'s infrastructure development.'
+                },
+                {
+                    url: 'assets/pics/meeting nicer.jpg',
+                    title: 'Technical Assistance',
+                    description: 'Professional oversight and technical support for major infrastructure projects across Ethiopia.'
+                }
             ],
             activeIndex: 0,
+            isTransitioning: false,
+            loadedImages: {},
             init() {
+                // Preload images
+                this.images.forEach((image, index) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        this.loadedImages[index] = true;
+                    };
+                    img.onerror = () => {
+                        console.error(`Failed to load image: ${image.url}`);
+                        // Fallback to a default image if loading fails
+                        this.images[index].url = 'assets/pics/road nice .jpg';
+                    };
+                    img.src = image.url;
+                });
+
                 setInterval(() => {
-                    this.activeIndex = (this.activeIndex + 1) % this.images.length;
-                }, 5000); // change every 5 seconds
+                    this.isTransitioning = true;
+                    setTimeout(() => {
+                        this.activeIndex = (this.activeIndex + 1) % this.images.length;
+                        this.isTransitioning = false;
+                    }, 500);
+                }, 6000);
             }
         }"
-        class="relative h-[600px] bg-cover bg-center transition-all duration-1000 ease-in-out"
-        :style="`background-image: url(${images[activeIndex]})`"
+        class="relative h-[600px] overflow-hidden"
         aria-label="Hero banner with rotating background images"
     >
-        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <!-- Loading State -->
+        <div x-show="!loadedImages[activeIndex]" class="absolute inset-0 bg-gray-900 flex items-center justify-center z-20">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-secondary"></div>
+        </div>
+
+        <!-- Hero Image -->
+        <img 
+            :src="images[activeIndex].url"
+            :alt="images[activeIndex].title"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+            :class="{'opacity-0': isTransitioning, 'opacity-100': !isTransitioning}"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 transition-opacity z-10"></div>
         <div class="container mx-auto px-4 h-full flex items-center relative z-10">
-            <div class="max-w-3xl">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">HITCON ENGINEERING</h1>
-                <p class="text-xl text-white mb-8">
-                    HITCON Engineering PLC is a consulting firm specializing in development, highways, transport, and bridges.
-                    Registered with the Ministry of Works, Infrastructure, and MoFED, it operates from Sarbet Karl Square, Dokimas Building, 2nd floor.
-                </p>
-                <a href="projects.html" class="btn btn-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
-                    EXPLORE OUR PROJECTS
-                </a>
+            <div class="max-w-3xl" 
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-4"
+            >
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4" x-text="images[activeIndex].title"></h1>
+                <p class="text-xl text-white mb-8" x-text="images[activeIndex].description"></p>
+                <div class="flex gap-4">
+                    <a href="projects.html" class="btn btn-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+                        EXPLORE OUR PROJECTS
+                    </a>
+                    <a href="about.html" class="inline-flex items-center px-6 py-3 border-2 border-secondary text-white !text-white hover:bg-secondary hover:!text-white transition-colors duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+                        LEARN MORE
+                    </a>
+                </div>
             </div>
+        </div>
+        
+        <!-- Image Navigation Dots -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <template x-for="(image, index) in images" :key="index">
+                <button 
+                    @click="activeIndex = index"
+                    class="w-3 h-3 rounded-full transition-all duration-300"
+                    :class="activeIndex === index ? 'bg-secondary scale-125' : 'bg-white/50 hover:bg-white/75'"
+                    :aria-label="'Go to slide ' + (index + 1)"
+                ></button>
+            </template>
         </div>
     </section>
 
@@ -143,7 +212,7 @@
                 <div class="md:w-1/2">
                     <img 
                         class="lazy-load rounded-lg shadow-lg"
-                        data-src="assets/pics/photo_1_2025-05-07_22-11-14.jpg" 
+                        data-src="assets/pics/pole poster awful.jpg" 
                         alt="HITCON Engineering team working on a project" 
                         loading="lazy"
                     >
@@ -174,7 +243,7 @@
                 >
                     <img 
                         class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                        data-src="assets/pics/photo_3_2025-05-07_22-11-14.jpg" 
+                        data-src="assets/pics/machine and road nice.jpg" 
                         alt="Road Safety Works project in Adigrat, Combolcha & Alemgena" 
                         loading="lazy"
                     >
@@ -207,7 +276,7 @@
                 >
                     <img 
                         class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                        data-src="assets/pics/photo_6_2025-05-07_22-11-14.jpg" 
+                        data-src="assets/pics/machine and road nice 2.jpg" 
                         alt="Koshe – Mito – Werabe Design & Build Supervision project" 
                         loading="lazy"
                     >
@@ -240,7 +309,7 @@
                 >
                     <img 
                         class="lazy-load w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                        data-src="assets/pics/photo_9_2025-05-07_22-11-14.jpg" 
+                        data-src="assets/pics/meeting nicer.jpg" 
                         alt="Road Management Support project in Adigrat & Gonder" 
                         loading="lazy"
                     >
