@@ -1,244 +1,352 @@
 <html>
     <!-- Services Section -->
-    <section class="py-16 bg-gray-50 dark:bg-gray-800" x-data="{ isVisible: false }" x-init="setTimeout(() => isVisible = true, 300)">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-14">
-                <h2 class="text-3xl font-bold text-primary dark:text-blue-300 mb-4">OUR SERVICES</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-                    HITCON Engineering PLC delivers comprehensive services across the entire infrastructure lifecycle, from planning and design to project management and supervision.
-                </p>
-            </div>
-            
-            <div class="max-w-7xl mx-auto"
-                x-intersect="isVisible = true"
-                :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
-                class="transition-all duration-1000 ease-out">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HITCON Engineering Services</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Alpine.js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            .service-card {
+                transition: all 0.3s ease;
+            }
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+        <!-- Services Section -->
+        <section class="py-16 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold mb-3">OUR EXPERTISE</span>
+                    <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">Our Services</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-6 rounded-full"></div>
+                    <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                        HITCON Engineering PLC delivers comprehensive services across the entire infrastructure lifecycle, from planning and design to project management and supervision.
+                    </p>
+                </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    
                     <!-- Service Card 1 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-road"></i>
-                            </div>
-                            <h3 class="service-title">Feasibility Studies & Design</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Pre-feasibility and Feasibility Studies</li>
-                                    <li>Road Network Studies</li>
-                                    <li>Topographic Survey & Mapping</li>
-                                    <li>Detailed Engineering Design</li>
-                                    <li>Traffic Analysis & Forecasting</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full mb-6">
+                            <i class="fas fa-road text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Feasibility Studies & Design</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Comprehensive planning and design services for infrastructure projects.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Pre-feasibility and Feasibility Studies
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Road Network Studies
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Topographic Survey & Mapping
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Detailed Engineering Design
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Traffic Analysis & Forecasting
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                     
                     <!-- Service Card 2 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-hard-hat"></i>
-                            </div>
-                            <h3 class="service-title">Construction Supervision</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Quality Control of Materials & Works</li>
-                                    <li>Construction Management & Monitoring</li>
-                                    <li>Contract Administration</li>
-                                    <li>Progress & Financial Control</li>
-                                    <li>Design Review & Value Engineering</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 rounded-full mb-6">
+                            <i class="fas fa-hard-hat text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Construction Supervision</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Expert oversight and management of construction projects.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-teal-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Quality Control of Materials & Works
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-teal-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Construction Management & Monitoring
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-teal-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Contract Administration
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-teal-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Progress & Financial Control
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-teal-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Design Review & Value Engineering
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                     
                     <!-- Service Card 3 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-bridge"></i>
-                            </div>
-                            <h3 class="service-title">Bridge & Structural Engineering</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Bridge Design & Analysis</li>
-                                    <li>Structural Assessment & Evaluation</li>
-                                    <li>Hydraulic & Geotechnical Investigation</li>
-                                    <li>Condition Surveys of Existing Bridges</li>
-                                    <li>Bridge Maintenance Planning</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-300 rounded-full mb-6">
+                            <i class="fas fa-bridge text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Bridge & Structural Engineering</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Specialized engineering for bridges and structural projects.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Bridge Design & Analysis
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Structural Assessment & Evaluation
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Hydraulic & Geotechnical Investigation
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Condition Surveys of Existing Bridges
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-cyan-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Bridge Maintenance Planning
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                     
                     <!-- Service Card 4 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <h3 class="service-title">Asset Management</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Road & Bridge Condition Surveys</li>
-                                    <li>Asset Inventory & Database Management</li>
-                                    <li>Maintenance Strategy Development</li>
-                                    <li>Performance Monitoring Systems</li>
-                                    <li>Road Maintenance Action Plans</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded-full mb-6">
+                            <i class="fas fa-layer-group text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Asset Management</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Strategic management of infrastructure assets for optimal performance.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Road & Bridge Condition Surveys
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Asset Inventory & Database Management
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Maintenance Strategy Development
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Performance Monitoring Systems
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Road Maintenance Action Plans
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                     
                     <!-- Service Card 5 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-tree"></i>
-                            </div>
-                            <h3 class="service-title">Environmental Engineering</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Environmental Impact Assessment</li>
-                                    <li>Mitigation & Management Plans</li>
-                                    <li>Social Impact Studies</li>
-                                    <li>Sustainable Design Solutions</li>
-                                    <li>Environmental Compliance Monitoring</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded-full mb-6">
+                            <i class="fas fa-tree text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Environmental Engineering</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Sustainable solutions that minimize environmental impact.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Environmental Impact Assessment
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Mitigation & Management Plans
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Social Impact Studies
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Sustainable Design Solutions
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Environmental Compliance Monitoring
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                     
                     <!-- Service Card 6 -->
-                    <div 
-                        class="service-card group" 
-                        x-data="{ showDetails: false }"
-                        tabindex="0"
-                    >
-                        <div class="card-content">
-                            <div class="service-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3 class="service-title">Transport Planning & Economics</h3>
-                            <div 
-                                class="service-description"
-                                x-show="showDetails" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-4"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                            >
-                                <ul class="service-list">
-                                    <li>Transport Master Planning</li>
-                                    <li>Economic Feasibility Analysis</li>
-                                    <li>Traffic Impact Studies</li>
-                                    <li>URRAP Impact Assessment</li>
-                                    <li>Cost-Benefit Analysis</li>
-                                </ul>
-                            </div>
-                            <button 
-                                @click="showDetails = !showDetails" 
-                                class="service-button"
-                                :class="showDetails ? 'expanded' : ''"
-                            >
-                                <span x-text="showDetails ? 'Show Less' : 'Learn More'"></span>
-                                <i class="fas" :class="showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                            </button>
+                    <div class="service-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-center w-16 h-16 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-300 rounded-full mb-6">
+                            <i class="fas fa-chart-line text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-3">Transport Planning & Economics</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Strategic planning and economic analysis for transportation systems.</p>
+                        
+                        <div x-show="open" x-transition class="mt-4 mb-4">
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Transport Master Planning
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Economic Feasibility Analysis
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Traffic Impact Studies
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    URRAP Impact Assessment
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Cost-Benefit Analysis
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button @click="open = !open" class="mt-2 flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 font-medium">
+                            <span x-text="open ? 'Show Less' : 'Learn More'"></span>
+                            <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
+                
             </div>
-        </div>
-    </section>
+        </section>
+    </body>
+    </html>
 </html>
