@@ -482,3 +482,27 @@ section {
     transform: scale(1.1);
     background-color: #f97316;
 } 
+
+@media screen and (max-width: 480px) {
+    .logo-text span {
+      font-size: 14px !important;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+  
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.5rem;
+    }
+  
+    .navbar-logo img {
+      width: 36px;
+      height: 36px;
+    }
+  
+    nav .container > .flex {
+      flex-wrap: wrap;
+    }
+  }
+  
